@@ -1,0 +1,119 @@
+import React from 'react';
+import { Linkedin, Mail, Award } from 'lucide-react';
+import { team } from '../../../data/team';
+
+const TeamSection = () => {
+    return (
+        <section id="team" className="py-20 px-4 bg-linear-to-br from-gray-50 to-emerald-50/30 dark:from-slate-800 dark:to-slate-900">
+            <div className="max-w-7xl mx-auto">
+
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <div className="inline-flex items-center space-x-2 bg-emerald-100 dark:bg-emerald-900/30 px-4 py-2 rounded-full mb-6">
+                        <Award className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                        <span className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                            Il Nostro Team
+                        </span>
+                    </div>
+
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                        Le Menti Dietro Tornese
+                    </h2>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        Un team di innovatori, tecnologi e visionari uniti dalla missione di rendere la sostenibilità accessibile e vantaggiosa per tutti.
+                    </p>
+                </div>
+
+                {/* Team Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {team.map((member, index) => (
+                        <div
+                            key={index}
+                            className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-2"
+                        >
+                            {/* Image Container */}
+                            <div className="relative h-64 overflow-hidden bg-linear-to-br from-emerald-400 to-teal-500">
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                />
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                                {/* Social Links - Appear on Hover */}
+                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                                    <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors shadow-lg"
+                                    >
+                                        <Linkedin className="w-5 h-5" />
+                                    </a>
+                                    <a
+                                        href={`mailto:${member.email}`}
+                                        className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors shadow-lg"
+                                    >
+                                        <Mail className="w-5 h-5" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                                    {member.name}
+                                </h3>
+                                <p className="text-emerald-600 dark:text-emerald-400 font-medium text-sm mb-4">
+                                    {member.role}
+                                </p>
+
+                                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                                    {member.bio}
+                                </p>
+
+                                {/* Skills Tags */}
+                                <div className="flex flex-wrap gap-2">
+                                    {member.skills.map((skill, i) => (
+                                        <span
+                                            key={i}
+                                            className="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 text-xs font-medium rounded-full border border-emerald-200 dark:border-emerald-800"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Decorative Corner */}
+                            <div className="absolute top-0 right-0 w-20 h-20 bg-linear-to-br from-emerald-500 to-teal-500 opacity-10 transform rotate-45 translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-300" />
+                        </div>
+                    ))}
+                </div>
+
+                {/* CTA - Join Team */}
+                <div className="mt-16 text-center">
+                    <div className="bg-linear-to-r from-emerald-500 to-teal-500 rounded-2xl p-8 md:p-12 shadow-xl">
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                            Vuoi Far Parte del Team?
+                        </h3>
+                        <p className="text-emerald-50 text-lg mb-6 max-w-2xl mx-auto">
+                            Siamo sempre alla ricerca di talenti appassionati di sostenibilità, blockchain e innovazione. Unisciti a noi nel costruire il futuro green.
+                        </p>
+                        <a
+                            href="mailto:careers@tornesefoundation.org"
+                            className="inline-flex items-center px-8 py-4 bg-white text-emerald-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-white/30 transition-all transform hover:scale-105"
+                        >
+                            <Mail className="w-5 h-5 mr-2" />
+                            Invia la Tua Candidatura
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    );
+};
+
+export default TeamSection;

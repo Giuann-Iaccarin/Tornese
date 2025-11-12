@@ -34,10 +34,10 @@ const TorneseLogo = ({ size = 'medium', showText = true, className = '' }) => {
             {/* Testo (opzionale) */}
             {showText && (
                 <div>
-                    <span className={`${currentSize.text} font-bold text-gray-900 dark:text-white`}>
+                    <span className={`${currentSize.text} font-bold text-gray-900`}>
                         TORNESE
                     </span>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
+                    <p className="text-xs text-gray-500 -mt-1">
                         Foundation
                     </p>
                 </div>

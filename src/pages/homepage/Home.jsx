@@ -36,8 +36,8 @@ const Home = () => {
                                     key={item}
                                     onClick={() => scrollToSection(item)}
                                     className={`capitalize text-sm font-semibold transition-all ${activeSection === item
-                                            ? 'text-blue-600'
-                                            : 'text-gray-600 hover:text-blue-600'
+                                        ? 'text-blue-600'
+                                        : 'text-gray-600 hover:text-blue-600'
                                         }`}
                                 >
                                     {item === 'home' ? 'Home' : item === 'progetto' ? 'Progetto' : item === 'media' ? 'Parlano di Noi' : item}
@@ -48,7 +48,7 @@ const Home = () => {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+                            className="md:hidden p-2 rounded-lg hover:bg-gray-100 text-gray-800"
                         >
                             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                         </button>

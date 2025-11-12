@@ -72,7 +72,7 @@ const Footer = () => {
 
                         {/* Brand Column */}
                         <div className="lg:col-span-2">
-                            <TorneseLogo size="large" className="footer mb-4" />
+                            <TorneseLogo size="medium" className="footer mb-4" />
 
                             <p className="text-gray-400 mb-6 leading-relaxed">
                                 Costruiamo il primo ecosistema blockchain per la sostenibilità urbana. Trasformiamo il riciclo in valore reale per cittadini e ambiente.

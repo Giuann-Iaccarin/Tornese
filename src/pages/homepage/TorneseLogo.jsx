@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TorneseLogo = ({ size = 'medium', showText = true, className = '' }) => {
+const TorneseLogo = ({ size = 'medium', showText = true, className = '', speed = '3s' }) => {
     const sizes = {
-        small: { svg: 'w-8 h-8', text: 'text-lg' },
-        medium: { svg: 'w-12 h-12', text: 'text-2xl' },
-        large: { svg: 'w-16 h-16', text: 'text-3xl' },
-        xlarge: { svg: 'w-24 h-24', text: 'text-4xl' }
+        small: { svg: 'w-16 h-16', text: 'text-2xl' },
+        medium: { svg: 'w-24 h-24', text: 'text-3xl' },
+        large: { svg: 'w-32 h-32', text: 'text-4xl' },
+        xlarge: { svg: 'w-48 h-48', text: 'text-5xl' }
     };
 
     const currentSize = sizes[size] || sizes.medium;
@@ -13,49 +13,45 @@ const TorneseLogo = ({ size = 'medium', showText = true, className = '' }) => {
 
     return (
         <div className={`flex items-center gap-3 ${className}`}>
-            {/* LOGO SVG (solo questo gruppo ruota) */}
-            <div className="flex items-center justify-center">
+            {/* LOGO SVG */}
+            <div className="flex items-center justify-center" style={{ perspective: '800px' }}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="1700 900 570 450"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    id="Layer_1"
+                    x="0px"
+                    y="0px"
+                    viewBox="1700 850 600 600"
+                    xmlSpace="preserve"
                     className={`${currentSize.svg} block`}
                 >
-                    {/* il gruppo qui sotto contiene le forme del logo e ruoterà come una ruota */}
+                    <style type="text/css">
+                        {`.st0{fill:#030305;}.st1{fill:#0073E6;}.st2{fill:#FFFFFF;}.st3{fill:none;}
+                          /* coin spin: la durata viene impostata dinamicamente via prop 'speed' */
+                          .coin{transform-box:fill-box;transform-origin:50% 50%;transform-style:preserve-3d;}
+                          @keyframes spinY{from{transform:rotateY(0deg);}to{transform:rotateY(360deg);}}`}
+                    </style>
                     <g>
                         <g>
-                            {/* animateTransform ruota intorno al centro del cerchio */}
-                            <g>
-                                <animateTransform
-                                    attributeName="transform"
-                                    type="rotate"
-                                    from="0 1985.51 1127.32"
-                                    to="360 1985.51 1127.32"
-                                    dur="6s"
-                                    repeatCount="indefinite"
-                                />
-                                <circle fill="#0073E6" cx="1985.51" cy="1127.32" r="285.1" />
+                            <g className="coin" style={{ animation: `spinY ${speed} linear infinite` }}>
+                                <circle className="st1" cx="2000" cy="1136.32" r="258.42" />
                                 <g>
-                                    <rect x="1848.61" y="1027.5" fill="#FFFFFF" width="273.79" height="42.21" />
-                                    <path
-                                        fill="#FFFFFF"
-                                        d="M1915.67,1098.55h-67.06v42.21h67.06c5.31,0,9.62,4.3,9.62,9.62v71.14
-                            c0,23.31,18.9,42.21,42.21,42.21v-113.35
-                            C1967.5,1121.76,1944.3,1098.55,1915.67,1098.55z"
-                                    />
-                                    <path
-                                        fill="#FFFFFF"
-                                        d="M2002.05,1150.38v113.35c23.31,0,42.21-18.9,42.21-42.21v-71.14
-                            c0-5.31,4.3-9.61,9.61-9.61h67.06v-42.21h-67.06
-                            C2025.25,1098.55,2002.05,1121.76,2002.05,1150.38z"
-                                    />
+                                    <g>
+                                        <path className="st2" d="M2040.02,1015.67c0,0-23.2,3.48-33.64,25.52c0,0-12.76-17.4-37.12-25.52h-97.45l26.68,44.08h47.56
+						c0,0,30.16,8.12,30.16,32.48v163.18h52.2v-167.82c0,0,1.16-24.36,25.52-27.84h48.72l25.52-44.08H2040.02z"/>
+                                        <polygon className="st2" points="1899.65,1256.97 1943.73,1217.52 1943.73,1085.27 1899.65,1085.27" />
+                                        <polygon className="st2" points="2057.42,1217.52 2101.51,1256.97 2101.51,1085.27 2057.42,1085.27" />
+                                    </g>
                                 </g>
                             </g>
                         </g>
+                        <rect className="st3" width="4000" height="2416" />
                     </g>
                 </svg>
             </div>
 
-            {/* Testo a fianco — rimane statico */}
+            {/* Testo a fianco */}
             {showText && (
                 <div className="flex flex-col justify-center">
                     <span className={`${currentSize.text} font-bold ${colorTornese} leading-none`}>

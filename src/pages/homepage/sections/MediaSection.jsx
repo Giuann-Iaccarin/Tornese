@@ -19,7 +19,7 @@ const MediaSection = () => {
     };
 
     return (
-        <section id="media" className="py-20 px-4 bg-white">
+        <section id="media" className="py-20 px-4 bg-white reveal reveal-delay-1">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
@@ -46,12 +46,11 @@ const MediaSection = () => {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {awards.map((award, index) => {
-                            const IconComponent = icons[award.icon]; // trova l’icona giusta
-
+                            const IconComponent = icons[award.icon];
                             return (
                                 <div
                                     key={index}
-                                    className="relative bg-white rounded-3xl p-6 shadow-xl border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all"
+                                    className={`relative bg-white rounded-3xl p-6 shadow-xl border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all reveal reveal-delay-${(index % 3) + 1}`}
                                 >
                                     {/* Background Gradient */}
                                     <div
@@ -95,7 +94,7 @@ const MediaSection = () => {
 
                     <div className="relative">
                         {/* Carousel Container */}
-                        <div className="overflow-hidden rounded-3xl">
+                        <div className="overflow-hidden rounded-3xl reveal reveal-delay-2">
                             <div
                                 className="flex transition-transform duration-500 ease-in-out"
                                 style={{ transform: `translateX(-${activeSlide * 100}%)` }}
@@ -105,7 +104,7 @@ const MediaSection = () => {
                                         key={index}
                                         className="w-full shrink-0 px-2"
                                     >
-                                        <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl">
+                                        <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl reveal reveal-delay-3">
                                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                                 {/* Logo/Icon */}
                                                 <div className="shrink-0">
@@ -182,7 +181,7 @@ const MediaSection = () => {
                 </div>
 
                 {/* Press Kit CTA */}
-                <div className="text-center bg-linear-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div className="text-center bg-linear-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 shadow-2xl reveal reveal-delay-2">
                     <Newspaper className="w-16 h-16 text-white mx-auto mb-6" />
                     <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
                         Sei un giornalista?

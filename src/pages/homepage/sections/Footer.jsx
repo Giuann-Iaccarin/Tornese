@@ -56,7 +56,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-slate-900 text-white relative overflow-hidden">
+        <footer className="bg-slate-900 text-white relative overflow-hidden reveal reveal-delay-1">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0" style={{
@@ -217,7 +217,7 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="py-6">
+                <div className="py-6 reveal reveal-delay-2">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="flex items-center gap-2 text-gray-400 text-sm">
                             <span>© 2025 Tornese.</span>
@@ -231,7 +231,7 @@ const Footer = () => {
                             <span className="text-gray-500 text-xs">P.IVA: IT12345678901</span>
                             <button
                                 onClick={scrollToTop}
-                                className="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 group"
+                                className="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 group reveal reveal-delay-3"
                                 aria-label="Torna su"
                             >
                                 <ArrowUp className="w-5 h-5 group-hover:animate-bounce" />

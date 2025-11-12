@@ -30,7 +30,7 @@ const Newsletter = () => {
     };
 
     return (
-        <section className="py-20 px-4 bg-linear-to-br from-blue-600 via-blue-700 to-cyan-600 relative overflow-hidden">
+        <section className="py-20 px-4 bg-linear-to-br from-blue-600 via-blue-700 to-cyan-600 relative overflow-hidden reveal reveal-delay-1">
             {/* Background Decorations */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
@@ -38,7 +38,7 @@ const Newsletter = () => {
             </div>
 
             <div className="max-w-4xl mx-auto relative z-10">
-                <div className="text-center mb-8">
+                <div className="text-center mb-8 reveal reveal-delay-2">
                     {/* Icon */}
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-3xl mb-6 border border-white/30 shadow-xl">
                         <Bell className="w-8 h-8 text-white animate-pulse" />
@@ -54,7 +54,7 @@ const Newsletter = () => {
                 </div>
 
                 {/* Newsletter Form */}
-                <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl">
+                <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl reveal reveal-delay-3">
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="flex flex-col md:flex-row gap-4">
                             <div className="flex-1 relative">
@@ -141,7 +141,7 @@ const Newsletter = () => {
                     ].map((benefit, index) => (
                         <div
                             key={index}
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all"
+                            className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all reveal reveal-delay-${(index % 3) + 1}`}
                         >
                             <div className="text-4xl mb-3">{benefit.icon}</div>
                             <h3 className="text-white font-black mb-2">{benefit.title}</h3>
@@ -151,7 +151,7 @@ const Newsletter = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="mt-12 text-center">
+                <div className="mt-12 text-center reveal reveal-delay-4">
                     <p className="text-blue-100 text-sm mb-4">
                         Unisciti a oltre <strong className="text-white font-black">2,500+ innovatori</strong> che seguono Tornese
                     </p>

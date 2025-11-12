@@ -14,7 +14,7 @@ const icons = {
 
 const ProjectSection = () => {
     return (
-        <section id="progetto" className="py-20 px-4 bg-white">
+        <section id="progetto" className="py-20 px-4 bg-white reveal reveal-delay-1">
             <div className="max-w-7xl mx-auto">
 
                 {/* Mission & Vision */}
@@ -40,13 +40,13 @@ const ProjectSection = () => {
                             const IconComponent = icons[item.icon]; // <-- prende il componente corretto dinamicamente
 
                             return (
-                                <div key={index} className="relative group">
+                                <div key={index} className={`relative group reveal reveal-delay-${index+1}`}>
                                     {/* Connecting Line */}
                                     {index < howItWorks.length - 1 && (
                                         <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-linear-to-r from-blue-500 to-cyan-500 opacity-30" />
                                     )}
 
-                                    <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2">
+                                    <div className={`relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2`}>
                                         {/* Step */}
                                         <div className="absolute -top-4 -right-4 w-12 h-12 bg-linear-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-black shadow-lg">
                                             {item.step}
@@ -72,7 +72,7 @@ const ProjectSection = () => {
                 </div>
 
                 {/* Tornese Token & Blockchain */}
-                <div className="mb-24 bg-linear-to-br from-blue-50 to-cyan-50 rounded-3xl p-12">
+                <div className="mb-24 bg-linear-to-br from-blue-50 to-cyan-50 rounded-3xl p-12 reveal reveal-delay-2">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <div className="inline-flex items-center space-x-2 bg-blue-100 px-4 py-2 rounded-full mb-6 border border-blue-200">
@@ -117,7 +117,7 @@ const ProjectSection = () => {
                                 return (
                                     <div
                                         key={i}
-                                        className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all"
+                                        className={`bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all reveal reveal-delay-${(i % 4) + 1}`}
                                     >
                                         {/* Icona dinamica */}
                                         {IconComponent ? (
@@ -150,7 +150,7 @@ const ProjectSection = () => {
 
                         <div className="space-y-12">
                             {roadmap.map((phase, index) => (
-                                <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                                <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} reveal reveal-delay-${(index % 4) + 1}`}>
                                     {/* Timeline Dot */}
                                     <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-linear-to-br from-blue-600 to-blue-700 rounded-full items-center justify-center z-10 border-4 border-white shadow-lg">
                                         <TrendingUp className="w-4 h-4 text-white" />

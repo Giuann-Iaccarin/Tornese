@@ -47,7 +47,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section id="contatti" className="py-20 px-4 bg-linear-to-br from-gray-50 to-blue-50/30">
+        <section id="contatti" className="py-20 px-4 bg-linear-to-br from-gray-50 to-blue-50/30 reveal reveal-delay-1">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
@@ -70,7 +70,7 @@ const ContactSection = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
 
                     {/* Contact Form */}
-                    <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
+                    <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 reveal reveal-delay-2">
                         <h3 className="text-2xl font-black text-gray-900 mb-6">
                             Invia un Messaggio
                         </h3>
@@ -189,7 +189,7 @@ const ContactSection = () => {
                                             href={info.link}
                                             target={info.title === "Sede" ? "_blank" : undefined}
                                             rel={info.title === "Sede" ? "noopener noreferrer" : undefined}
-                                            className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group"
+                                            className={`flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group reveal reveal-delay-${(index % 3) + 1}`}
                                         >
                                             <div
                                                 className={`w-12 h-12 bg-linear-to-br ${info.color} rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-lg`}
@@ -222,7 +222,7 @@ const ContactSection = () => {
                                             href={social.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200 ${social.color} hover:text-white transition-all group`}
+                                            className={`flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200 ${social.color} hover:text-white transition-all group reveal reveal-delay-${(index % 3) + 1}`}
                                         >
                                             {IconComponent && (
                                                 <IconComponent className="w-6 h-6 group-hover:scale-110 transition-transform" />

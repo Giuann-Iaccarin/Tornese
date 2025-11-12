@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X, Recycle, Coins, TrendingUp } from 'lucide-react';
 import ProjectSection from './sections/ProjectSection';
 import TeamSection from './sections/TeamSection';
@@ -7,6 +7,7 @@ import ContactSection from './sections/ContactSection';
 import Footer from './sections/Footer';
 import Newsletter from './sections/Newsletter';
 import TorneseLogo from './TorneseLogo';
+import '../../styles/reveal.css';
 
 const Home = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,13 +22,29 @@ const Home = () => {
         }
     };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            },
+            { threshold: 0.12 }
+        );
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <div className="min-h-screen transition-colors duration-300 bg-white">
             {/* Navigation */}
             <nav className="fixed w-full top-0 z-50 backdrop-blur-lg bg-white/90 border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
-                        <TorneseLogo size="large" />
+                        <TorneseLogo size="medium" />
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8">
@@ -74,7 +91,7 @@ const Home = () => {
             </nav>
 
             {/* Hero Section */}
-            <section id="home" className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+            <section id="home" className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden reveal reveal-delay-1">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl" />
@@ -105,7 +122,7 @@ const Home = () => {
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 reveal reveal-delay-2">
                             <button
                                 onClick={() => scrollToSection('progetto')}
                                 className="px-10 py-5 bg-linear-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 hover:-translate-y-1"
@@ -126,7 +143,7 @@ const Home = () => {
                             ].map((stat, i) => (
                                 <div
                                     key={i}
-                                    className="group bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2 relative overflow-hidden"
+                                    className={`group bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2 relative overflow-hidden reveal reveal-delay-${i + 1}`}
                                 >
                                     {/* Background Gradient */}
                                     <div className={`absolute inset-0 bg-linear-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity`} />

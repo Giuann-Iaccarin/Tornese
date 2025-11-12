@@ -4,7 +4,7 @@ import { team } from '../../../data/team';
 
 const TeamSection = () => {
     return (
-        <section id="team" className="py-20 px-4 bg-linear-to-br from-gray-50 to-blue-50/30">
+        <section id="team" className="py-20 px-4 bg-linear-to-br from-gray-50 to-blue-50/30 reveal reveal-delay-1">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
@@ -29,10 +29,10 @@ const TeamSection = () => {
                     {team.map((member, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2"
+                            className={`group relative bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal reveal-delay-${(index % 3) + 1}`}
                         >
                             {/* Image Container */}
-                            <div className="relative h-64 overflow-hidden bg-linear-to-br from-blue-500 to-cyan-500">
+                            <div className="relative h-64 overflow-hidden bg-linear-to-br from-blue-500 to-cyan-500 reveal-hover-scale">
                                 <img
                                     src={member.image}
                                     alt={member.name}
@@ -93,7 +93,7 @@ const TeamSection = () => {
                 </div>
 
                 {/* CTA - Join Team */}
-                <div className="mt-16 text-center">
+                <div className="mt-16 text-center reveal reveal-delay-2">
                     <div className="bg-linear-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 shadow-2xl">
                         <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
                             Vuoi Far Parte del Team?

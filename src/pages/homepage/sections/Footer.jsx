@@ -220,7 +220,7 @@ const Footer = () => {
                 <div className="py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="flex items-center gap-2 text-gray-400 text-sm">
-                            <span>© 2025 Tornese Foundation.</span>
+                            <span>© 2025 Tornese.</span>
                             <span className="hidden md:inline">•</span>
                             <span className="flex items-center gap-1">
                                 Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Napoli

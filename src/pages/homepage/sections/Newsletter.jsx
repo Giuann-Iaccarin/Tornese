@@ -109,7 +109,7 @@ const Newsletter = () => {
 
                         {/* Privacy Note */}
                         <p className="text-xs text-gray-600 text-center">
-                            Iscrivendoti accetti di ricevere comunicazioni da Tornese Foundation.
+                            Iscrivendoti accetti di ricevere comunicazioni da Tornese.
                             <br className="hidden md:block" />
                             Leggi la nostra{' '}
                             <a href="#" className="text-blue-600 hover:underline font-medium">
@@ -153,7 +153,7 @@ const Newsletter = () => {
                 {/* Stats */}
                 <div className="mt-12 text-center">
                     <p className="text-blue-100 text-sm mb-4">
-                        Unisciti a oltre <strong className="text-white font-black">2,500+ innovatori</strong> che seguono Tornese Foundation
+                        Unisciti a oltre <strong className="text-white font-black">2,500+ innovatori</strong> che seguono Tornese
                     </p>
                     <div className="flex justify-center gap-2">
                         {[...Array(5)].map((_, i) => (

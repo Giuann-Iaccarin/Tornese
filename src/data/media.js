@@ -2,7 +2,7 @@ export const mediaArticles = [
     {
         outlet: 'Il Sole 24 Ore',
         logo: '💼',
-        title: 'Tornese Foundation vince Start Cup Campania 2025',
+        title: 'Tornese vince Start Cup Campania 2025',
         excerpt: 'La startup napoletana che unisce blockchain e sostenibilità si aggiudica il primo premio nella categoria innovazione tecnologica.',
         date: '15 Marzo 2025',
         link: '#',
@@ -38,7 +38,7 @@ export const mediaArticles = [
     {
         outlet: 'Wired Italia',
         logo: '⚡',
-        title: 'Blockchain for Good: il caso Tornese Foundation',
+        title: 'Blockchain for Good: il caso Tornese',
         excerpt: 'Come la tecnologia distribuita può accelerare la transizione ecologica nelle città italiane.',
         date: '18 Dicembre 2024',
         link: '#',

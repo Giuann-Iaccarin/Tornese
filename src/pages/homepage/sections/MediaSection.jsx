@@ -1,80 +1,14 @@
 import React, { useState } from 'react';
 import { Newspaper, Award, ExternalLink, ChevronLeft, ChevronRight, Trophy, Star } from 'lucide-react';
+import { mediaArticles, awards } from '../../../data/media';
+const icons = {
+    Trophy,
+    Award,
+    Star,
+};
 
 const MediaSection = () => {
     const [activeSlide, setActiveSlide] = useState(0);
-
-    const mediaArticles = [
-        {
-            outlet: 'Il Sole 24 Ore',
-            logo: '💼',
-            title: 'Tornese Foundation vince Start Cup Campania 2025',
-            excerpt: 'La startup napoletana che unisce blockchain e sostenibilità si aggiudica il primo premio nella categoria innovazione tecnologica.',
-            date: '15 Marzo 2025',
-            link: '#',
-            type: 'article'
-        },
-        {
-            outlet: 'TechCrunch Italy',
-            logo: '🚀',
-            title: 'Come Tornese sta rivoluzionando il riciclo urbano',
-            excerpt: 'Un\'intervista esclusiva ai founder della piattaforma che trasforma i rifiuti in criptovalute.',
-            date: '8 Febbraio 2025',
-            link: '#',
-            type: 'article'
-        },
-        {
-            outlet: 'La Repubblica',
-            logo: '📰',
-            title: 'Napoli pioniera della green economy blockchain',
-            excerpt: 'Le colonnine intelligenti di Tornese inaugurano una nuova era per la raccolta differenziata incentivata.',
-            date: '22 Gennaio 2025',
-            link: '#',
-            type: 'article'
-        },
-        {
-            outlet: 'Corriere del Mezzogiorno',
-            logo: '📱',
-            title: 'Riciclo 4.0: la startup che premia i cittadini virtuosi',
-            excerpt: 'Token digitali al posto dei rifiuti: l\'idea innovativa che convince investitori e istituzioni.',
-            date: '5 Gennaio 2025',
-            link: '#',
-            type: 'article'
-        },
-        {
-            outlet: 'Wired Italia',
-            logo: '⚡',
-            title: 'Blockchain for Good: il caso Tornese Foundation',
-            excerpt: 'Come la tecnologia distribuita può accelerare la transizione ecologica nelle città italiane.',
-            date: '18 Dicembre 2024',
-            link: '#',
-            type: 'article'
-        }
-    ];
-
-    const awards = [
-        {
-            title: 'Start Cup Campania 2025',
-            category: 'Primo Premio - Innovazione Tecnologica',
-            year: '2025',
-            icon: Trophy,
-            color: 'from-yellow-400 to-orange-500'
-        },
-        {
-            title: 'Green Innovation Award',
-            category: 'Miglior Progetto Sostenibilità',
-            year: '2025',
-            icon: Award,
-            color: 'from-blue-500 to-cyan-500'
-        },
-        {
-            title: 'Blockchain Italia Awards',
-            category: 'Best Social Impact Project',
-            year: '2024',
-            icon: Star,
-            color: 'from-blue-600 to-blue-700'
-        }
-    ];
 
     const nextSlide = () => {
         setActiveSlide((prev) => (prev + 1) % mediaArticles.length);
@@ -111,33 +45,45 @@ const MediaSection = () => {
                         Premi e Riconoscimenti
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {awards.map((award, index) => (
-                            <div
-                                key={index}
-                                className="relative bg-white rounded-3xl p-6 shadow-xl border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all"
-                            >
-                                {/* Background Gradient */}
-                                <div className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${award.color} opacity-10 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-500`} />
+                        {awards.map((award, index) => {
+                            const IconComponent = icons[award.icon]; // trova l’icona giusta
 
-                                {/* Icon */}
-                                <div className={`w-16 h-16 bg-linear-to-br ${award.color} rounded-2xl flex items-center justify-center mb-4 relative z-10 shadow-lg`}>
-                                    <award.icon className="w-8 h-8 text-white" />
-                                </div>
+                            return (
+                                <div
+                                    key={index}
+                                    className="relative bg-white rounded-3xl p-6 shadow-xl border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all"
+                                >
+                                    {/* Background Gradient */}
+                                    <div
+                                        className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${award.color} opacity-10 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-500`}
+                                    />
 
-                                {/* Content */}
-                                <div className="relative z-10">
-                                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full mb-3">
-                                        {award.year}
-                                    </span>
-                                    <h4 className="text-lg font-black text-gray-900 mb-2">
-                                        {award.title}
-                                    </h4>
-                                    <p className="text-sm text-gray-600">
-                                        {award.category}
-                                    </p>
+                                    {/* Icon */}
+                                    <div
+                                        className={`w-16 h-16 bg-linear-to-br ${award.color} rounded-2xl flex items-center justify-center mb-4 relative z-10 shadow-lg`}
+                                    >
+                                        {IconComponent ? (
+                                            <IconComponent className="w-8 h-8 text-white" />
+                                        ) : (
+                                            <div className="w-8 h-8 bg-white/30 rounded-md" /> // fallback
+                                        )}
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="relative z-10">
+                                        <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full mb-3">
+                                            {award.year}
+                                        </span>
+                                        <h4 className="text-lg font-black text-gray-900 mb-2">
+                                            {award.title}
+                                        </h4>
+                                        <p className="text-sm text-gray-600">
+                                            {award.category}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -226,8 +172,8 @@ const MediaSection = () => {
                                     key={index}
                                     onClick={() => setActiveSlide(index)}
                                     className={`w-2 h-2 rounded-full transition-all ${index === activeSlide
-                                            ? 'bg-blue-600 w-8'
-                                            : 'bg-gray-300 hover:bg-blue-400'
+                                        ? 'bg-blue-600 w-8'
+                                        : 'bg-gray-300 hover:bg-blue-400'
                                         }`}
                                 />
                             ))}

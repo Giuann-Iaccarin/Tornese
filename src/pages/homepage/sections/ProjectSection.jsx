@@ -1,101 +1,18 @@
 import React from 'react';
 import { Recycle, Coins, ShoppingBag, Shield, Leaf, Zap, Globe, TrendingUp } from 'lucide-react';
+import { howItWorks, features, roadmap } from '../../../data/project';
+
+const icons = {
+    Recycle,
+    Coins,
+    ShoppingBag,
+    Shield,
+    Leaf,
+    Zap,
+    Globe
+};
 
 const ProjectSection = () => {
-    const howItWorks = [
-        {
-            step: '01',
-            icon: Recycle,
-            title: 'Ricicla',
-            description: 'Inserisci plastica, lattine e materiali riciclabili nelle nostre colonnine intelligenti distribuite in città.',
-            color: 'from-blue-500 to-cyan-500'
-        },
-        {
-            step: '02',
-            icon: Coins,
-            title: 'Ricevi',
-            description: 'Ottieni immediatamente token Tornese (TRN) sulla blockchain, tracciabili e sicuri nel tuo wallet digitale.',
-            color: 'from-blue-600 to-blue-700'
-        },
-        {
-            step: '03',
-            icon: ShoppingBag,
-            title: 'Usa',
-            description: 'Converti i tuoi token in buoni carburante, biglietti per mezzi pubblici o sconti presso partner convenzionati.',
-            color: 'from-cyan-500 to-blue-500'
-        }
-    ];
-
-    const features = [
-        {
-            icon: Shield,
-            title: 'Blockchain Sicura',
-            description: 'Ogni transazione è registrata su blockchain, garantendo trasparenza e tracciabilità totale.'
-        },
-        {
-            icon: Leaf,
-            title: 'Impatto ESG',
-            description: 'Monitoriamo e certifichiamo l\'impatto ambientale reale attraverso metriche ESG verificate.'
-        },
-        {
-            icon: Zap,
-            title: 'Instant Reward',
-            description: 'Ricevi i tuoi token istantaneamente al momento del conferimento del materiale riciclabile.'
-        },
-        {
-            icon: Globe,
-            title: 'Rete Distribuita',
-            description: 'Un ecosistema scalabile di colonnine smart connesse in tutta Italia e in Europa.'
-        }
-    ];
-
-    const roadmap = [
-        {
-            year: '2026',
-            quarter: 'Q1-Q2',
-            title: 'Fase Pilota',
-            milestones: [
-                'Installazione 50 colonnine a Napoli',
-                'Lancio token TRN su testnet',
-                'Partnership con 3 comuni campani'
-            ],
-            status: 'in-progress'
-        },
-        {
-            year: '2026',
-            quarter: 'Q3-Q4',
-            title: 'Espansione Regionale',
-            milestones: [
-                'Espansione in Campania: 200+ colonnine',
-                'Mainnet launch e listing su exchange',
-                'Accordi con aziende di trasporto pubblico'
-            ],
-            status: 'planned'
-        },
-        {
-            year: '2027',
-            quarter: 'Q1-Q4',
-            title: 'Scale Nazionale',
-            milestones: [
-                'Presenza in 10 città italiane',
-                '1000+ colonnine attive',
-                'Partnership con catene retail nazionali'
-            ],
-            status: 'planned'
-        },
-        {
-            year: '2028-2030',
-            quarter: '',
-            title: 'Espansione Europea',
-            milestones: [
-                'Lancio in 5 paesi europei',
-                'Network di 5000+ colonnine',
-                'Certificazioni internazionali ESG'
-            ],
-            status: 'planned'
-        }
-    ];
-
     return (
         <section id="progetto" className="py-20 px-4 bg-white">
             <div className="max-w-7xl mx-auto">
@@ -106,7 +23,7 @@ const ProjectSection = () => {
                         Il Progetto Tornese
                     </h2>
                     <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        Tornese Foundation sta costruendo la prima rete di <span className="text-blue-600 font-semibold">colonnine intelligenti per il riciclo</span> integrate con blockchain,
+                        Tornese sta costruendo la prima rete di <span className="text-blue-600 font-semibold">colonnine intelligenti per il riciclo</span> integrate con blockchain,
                         che trasforma l'azione quotidiana del riciclo in un incentivo economico reale. La nostra missione è accelerare
                         la transizione verso un'<span className="text-blue-600 font-semibold">economia circolare sostenibile</span>,
                         rendendo la sostenibilità accessibile e vantaggiosa per tutti.
@@ -119,34 +36,38 @@ const ProjectSection = () => {
                         Come Funziona
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {howItWorks.map((item, index) => (
-                            <div key={index} className="relative group">
-                                {/* Connecting Line - desktop only */}
-                                {index < howItWorks.length - 1 && (
-                                    <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-linear-to-r from-blue-500 to-cyan-500 opacity-30" />
-                                )}
+                        {howItWorks.map((item, index) => {
+                            const IconComponent = icons[item.icon]; // <-- prende il componente corretto dinamicamente
 
-                                <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2">
-                                    {/* Step Number */}
-                                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-linear-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-black shadow-lg">
-                                        {item.step}
+                            return (
+                                <div key={index} className="relative group">
+                                    {/* Connecting Line */}
+                                    {index < howItWorks.length - 1 && (
+                                        <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-linear-to-r from-blue-500 to-cyan-500 opacity-30" />
+                                    )}
+
+                                    <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2">
+                                        {/* Step */}
+                                        <div className="absolute -top-4 -right-4 w-12 h-12 bg-linear-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-black shadow-lg">
+                                            {item.step}
+                                        </div>
+
+                                        {/* Icon */}
+                                        <div className={`w-16 h-16 bg-linear-to-br ${item.color} rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg`}>
+                                            {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
+                                        </div>
+
+                                        {/* Content */}
+                                        <h4 className="text-2xl font-black text-gray-900 mb-3 text-center">
+                                            {item.title}
+                                        </h4>
+                                        <p className="text-gray-600 text-center leading-relaxed">
+                                            {item.description}
+                                        </p>
                                     </div>
-
-                                    {/* Icon */}
-                                    <div className={`w-16 h-16 bg-linear-to-br ${item.color} rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg`}>
-                                        <item.icon className="w-8 h-8 text-white" />
-                                    </div>
-
-                                    {/* Content */}
-                                    <h4 className="text-2xl font-black text-gray-900 mb-3 text-center">
-                                        {item.title}
-                                    </h4>
-                                    <p className="text-gray-600 text-center leading-relaxed">
-                                        {item.description}
-                                    </p>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -190,13 +111,26 @@ const ProjectSection = () => {
                         </div>
 
                         <div className="grid grid-cols-2 gap-6">
-                            {features.map((feature, i) => (
-                                <div key={i} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all">
-                                    <feature.icon className="w-10 h-10 text-blue-600 mb-4" />
-                                    <h5 className="font-bold text-gray-900 mb-2">{feature.title}</h5>
-                                    <p className="text-sm text-gray-600">{feature.description}</p>
-                                </div>
-                            ))}
+                            {features.map((feature, i) => {
+                                const IconComponent = icons[feature.icon]; // Prende il componente corretto
+
+                                return (
+                                    <div
+                                        key={i}
+                                        className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all"
+                                    >
+                                        {/* Icona dinamica */}
+                                        {IconComponent ? (
+                                            <IconComponent className="w-10 h-10 text-blue-600 mb-4" />
+                                        ) : (
+                                            <div className="w-10 h-10 mb-4 bg-blue-100 rounded-lg" /> // fallback
+                                        )}
+
+                                        <h5 className="font-bold text-gray-900 mb-2">{feature.title}</h5>
+                                        <p className="text-sm text-gray-600">{feature.description}</p>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -225,8 +159,8 @@ const ProjectSection = () => {
                                     {/* Content Card */}
                                     <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-16' : 'md:pl-16'}`}>
                                         <div className={`bg-white rounded-2xl p-6 shadow-xl border-2 ${phase.status === 'in-progress'
-                                                ? 'border-blue-600 shadow-blue-500/20'
-                                                : 'border-gray-100'
+                                            ? 'border-blue-600 shadow-blue-500/20'
+                                            : 'border-gray-100'
                                             } hover:shadow-2xl transition-all`}>
 
                                             <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>

@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Send, Linkedin, Instagram, Twitter, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { contactInfo, socialLinks } from '../../../data/contacts';
+
+const icons = {
+    Mail,
+    Phone,
+    MapPin,
+    Linkedin,
+    Instagram,
+    Twitter,
+    MessageCircle,
+};
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -34,57 +45,6 @@ const ContactSection = () => {
             setTimeout(() => setFormStatus(null), 3000);
         }
     };
-
-    const contactInfo = [
-        {
-            icon: Mail,
-            title: 'Email',
-            value: 'info@tornesefoundation.org',
-            link: 'mailto:info@tornesefoundation.org',
-            color: 'from-blue-500 to-cyan-500'
-        },
-        {
-            icon: Phone,
-            title: 'Telefono',
-            value: '+39 081 123 4567',
-            link: 'tel:+390811234567',
-            color: 'from-blue-600 to-blue-700'
-        },
-        {
-            icon: MapPin,
-            title: 'Sede',
-            value: 'Via Toledo, 256\n80132 Napoli, Italia',
-            link: 'https://maps.google.com/?q=Via+Toledo+256+Napoli',
-            color: 'from-cyan-500 to-blue-500'
-        }
-    ];
-
-    const socialLinks = [
-        {
-            name: 'LinkedIn',
-            icon: Linkedin,
-            url: 'https://linkedin.com/company/tornese-foundation',
-            color: 'hover:bg-blue-600'
-        },
-        {
-            name: 'Instagram',
-            icon: Instagram,
-            url: 'https://instagram.com/tornesefoundation',
-            color: 'hover:bg-pink-600'
-        },
-        {
-            name: 'Twitter/X',
-            icon: Twitter,
-            url: 'https://twitter.com/tornesefnd',
-            color: 'hover:bg-sky-500'
-        },
-        {
-            name: 'Telegram',
-            icon: MessageCircle,
-            url: 'https://t.me/tornesefoundation',
-            color: 'hover:bg-blue-500'
-        }
-    ];
 
     return (
         <section id="contatti" className="py-20 px-4 bg-linear-to-br from-gray-50 to-blue-50/30">
@@ -220,27 +180,29 @@ const ContactSection = () => {
                             </h3>
 
                             <div className="space-y-6">
-                                {contactInfo.map((info, index) => (
-                                    <a
-                                        key={index}
-                                        href={info.link}
-                                        target={info.title === 'Sede' ? '_blank' : undefined}
-                                        rel={info.title === 'Sede' ? 'noopener noreferrer' : undefined}
-                                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group"
-                                    >
-                                        <div className={`w-12 h-12 bg-linear-to-br ${info.color} rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-lg`}>
-                                            <info.icon className="w-6 h-6 text-white" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-1">
-                                                {info.title}
-                                            </h4>
-                                            <p className="text-gray-600 whitespace-pre-line">
-                                                {info.value}
-                                            </p>
-                                        </div>
-                                    </a>
-                                ))}
+                                {contactInfo.map((info, index) => {
+                                    const IconComponent = icons[info.icon];
+
+                                    return (
+                                        <a
+                                            key={index}
+                                            href={info.link}
+                                            target={info.title === "Sede" ? "_blank" : undefined}
+                                            rel={info.title === "Sede" ? "noopener noreferrer" : undefined}
+                                            className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group"
+                                        >
+                                            <div
+                                                className={`w-12 h-12 bg-linear-to-br ${info.color} rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-lg`}
+                                            >
+                                                {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-gray-900 mb-1">{info.title}</h4>
+                                                <p className="text-gray-600 whitespace-pre-line">{info.value}</p>
+                                            </div>
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
 
@@ -251,18 +213,24 @@ const ContactSection = () => {
                             </h3>
 
                             <div className="grid grid-cols-2 gap-4">
-                                {socialLinks.map((social, index) => (
-                                    <a
-                                        key={index}
-                                        href={social.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`flex items-center gap-3 p-4 bg-gray-50 rounded-xl ${social.color} hover:text-white transition-all group border border-gray-200`}
-                                    >
-                                        <social.icon className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                                        <span className="font-bold">{social.name}</span>
-                                    </a>
-                                ))}
+                                {socialLinks.map((social, index) => {
+                                    const IconComponent = icons[social.icon];
+
+                                    return (
+                                        <a
+                                            key={index}
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200 ${social.color} hover:text-white transition-all group`}
+                                        >
+                                            {IconComponent && (
+                                                <IconComponent className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                                            )}
+                                            <span className="font-bold">{social.name}</span>
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
 
@@ -279,30 +247,6 @@ const ContactSection = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Map Placeholder */}
-                <div className="bg-white rounded-3xl p-4 shadow-2xl border border-gray-100 overflow-hidden">
-                    <div className="aspect-video bg-linear-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center">
-                        <div className="text-center">
-                            <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                            <p className="text-gray-600 font-bold">
-                                Mappa Interattiva
-                            </p>
-                            <p className="text-sm text-gray-500 mt-2">
-                                Via Toledo, 256 - 80132 Napoli, Italia
-                            </p>
-                            <a
-                                href="https://maps.google.com/?q=Via+Toledo+256+Napoli"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors"
-                            >
-                                Apri in Google Maps
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
     );

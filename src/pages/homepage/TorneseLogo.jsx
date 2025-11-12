@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TorneseLogo = ({ size = 'medium', showText = true, className = '' }) => {
-    // Dimensioni predefinite
     const sizes = {
         small: { svg: 'w-8 h-8', text: 'text-lg' },
         medium: { svg: 'w-12 h-12', text: 'text-2xl' },
@@ -10,36 +9,42 @@ const TorneseLogo = ({ size = 'medium', showText = true, className = '' }) => {
     };
 
     const currentSize = sizes[size] || sizes.medium;
+    const colorTornese = className.includes('footer') ? 'text-white' : 'text-gray-900';
 
     return (
-        <div className={`flex items-center space-x-3 ${className}`}>
-            {/* Logo SVG */}
-            <svg
-                viewBox="1700 800 600 600"
-                xmlns="http://www.w3.org/2000/svg"
-                className={currentSize.svg}
-            >
-                {/* Cerchio blu */}
-                <circle fill="#0073E6" cx="2000" cy="1136.32" r="258.42" />
+        <div className={`flex items-center gap-3 ${className}`}>
+            {/* LOGO SVG centrato */}
+            <div className="flex items-center justify-center">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="1700 900 570 450"
+                    className={`${currentSize.svg} block`}
+                >
+                    <circle fill="#0073E6" cx="1985.51" cy="1127.32" r="285.1" />
+                    <g>
+                        <rect x="1848.61" y="1027.5" fill="#FFFFFF" width="273.79" height="42.21" />
+                        <path
+                            fill="#FFFFFF"
+                            d="M1915.67,1098.55h-67.06v42.21h67.06c5.31,0,9.62,4.3,9.62,9.62v71.14
+                            c0,23.31,18.9,42.21,42.21,42.21v-113.35
+                            C1967.5,1121.76,1944.3,1098.55,1915.67,1098.55z"
+                        />
+                        <path
+                            fill="#FFFFFF"
+                            d="M2002.05,1150.38v113.35c23.31,0,42.21-18.9,42.21-42.21v-71.14
+                            c0-5.31,4.3-9.61,9.61-9.61h67.06v-42.21h-67.06
+                            C2025.25,1098.55,2002.05,1121.76,2002.05,1150.38z"
+                        />
+                    </g>
+                </svg>
+            </div>
 
-                {/* Simbolo T bianco */}
-                <g fill="#FFFFFF">
-                    <path d="M2040.02,1015.67c0,0-23.2,3.48-33.64,25.52c0,0-12.76-17.4-37.12-25.52h-97.45l26.68,44.08h47.56
-              c0,0,30.16,8.12,30.16,32.48v163.18h52.2v-167.82c0,0,1.16-24.36,25.52-27.84h48.72l25.52-44.08H2040.02z"/>
-                    <polygon points="1899.65,1256.97 1943.73,1217.52 1943.73,1085.27 1899.65,1085.27" />
-                    <polygon points="2057.42,1217.52 2101.51,1256.97 2101.51,1085.27 2057.42,1085.27" />
-                </g>
-            </svg>
-
-            {/* Testo (opzionale) */}
+            {/* Testo a fianco */}
             {showText && (
-                <div>
-                    <span className={`${currentSize.text} font-bold text-gray-900`}>
+                <div className="flex flex-col justify-center">
+                    <span className={`${currentSize.text} font-bold ${colorTornese} leading-none`}>
                         TORNESE
                     </span>
-                    <p className="text-xs text-gray-500 -mt-1">
-                        Foundation
-                    </p>
                 </div>
             )}
         </div>
@@ -47,9 +52,3 @@ const TorneseLogo = ({ size = 'medium', showText = true, className = '' }) => {
 };
 
 export default TorneseLogo;
-
-// Esempi di utilizzo:
-// <TorneseLogo size="small" />
-// <TorneseLogo size="medium" showText={true} />
-// <TorneseLogo size="large" showText={false} />
-// <TorneseLogo size="xlarge" className="my-custom-class" />

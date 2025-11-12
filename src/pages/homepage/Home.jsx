@@ -6,6 +6,7 @@ import MediaSection from './sections/MediaSection';
 import ContactSection from './sections/ContactSection';
 import Footer from './sections/Footer';
 import Newsletter from './sections/Newsletter';
+import TorneseLogo from './TorneseLogo';
 
 const Home = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,18 +27,7 @@ const Home = () => {
             <nav className="fixed w-full top-0 z-50 backdrop-blur-lg bg-white/90 border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
-                        {/* Logo */}
-                        <div className="flex items-center space-x-3">
-                            <div className="w-12 h-12 bg-linear-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 8h16M4 8v8a2 2 0 002 2h12a2 2 0 002-2V8M4 8l2-4h12l2 4M10 12v4M14 12v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </div>
-                            <div>
-                                <span className="text-2xl font-bold text-gray-900">TORNESE</span>
-                                <p className="text-xs text-gray-500 -mt-1">Foundation</p>
-                            </div>
-                        </div>
+                        <TorneseLogo size="medium" />
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8">

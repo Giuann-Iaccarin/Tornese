@@ -72,11 +72,15 @@ const Footer = () => {
                         {/* Brand Column */}
                         <div className="lg:col-span-2">
                             <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-12 h-12 bg-linear-to-br from-blue-600 to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 8h16M4 8v8a2 2 0 002 2h12a2 2 0 002-2V8M4 8l2-4h12l2 4M10 12v4M14 12v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </div>
+                                <svg viewBox="1700 800 600 600" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
+                                    <circle fill="#0073E6" cx="2000" cy="1136.32" r="258.42" />
+                                    <g fill="#FFFFFF">
+                                        <path d="M2040.02,1015.67c0,0-23.2,3.48-33.64,25.52c0,0-12.76-17.4-37.12-25.52h-97.45l26.68,44.08h47.56
+                        c0,0,30.16,8.12,30.16,32.48v163.18h52.2v-167.82c0,0,1.16-24.36,25.52-27.84h48.72l25.52-44.08H2040.02z"/>
+                                        <polygon points="1899.65,1256.97 1943.73,1217.52 1943.73,1085.27 1899.65,1085.27" />
+                                        <polygon points="2057.42,1217.52 2101.51,1256.97 2101.51,1085.27 2057.42,1085.27" />
+                                    </g>
+                                </svg>
                                 <div>
                                     <span className="text-xl font-black">TORNESE</span>
                                     <p className="text-xs text-gray-400 -mt-1">Foundation</p>

@@ -243,7 +243,7 @@ const Footer = () => {
             </div>
 
             {/* Decorative Bottom Border */}
-            <div className="h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600" />
+            <div className="h-1 bg-linear-to-r from-blue-600 via-cyan-500 to-blue-600" />
         </footer>
     );
 };

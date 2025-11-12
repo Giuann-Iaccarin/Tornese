@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, Mail, MapPin, Linkedin, Instagram, Twitter, MessageCircle, ExternalLink, Heart, ArrowUp } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Instagram, Twitter, MessageCircle, ExternalLink, Heart, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -71,11 +71,16 @@ const Footer = () => {
 
                         {/* Brand Column */}
                         <div className="lg:col-span-2">
-                            <div className="flex items-center space-x-2 mb-6">
-                                <div className="w-10 h-10 bg-linear-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-                                    <Leaf className="w-6 h-6 text-white" />
+                            <div className="flex items-center space-x-3 mb-6">
+                                <div className="w-12 h-12 bg-linear-to-br from-blue-600 to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 8h16M4 8v8a2 2 0 002 2h12a2 2 0 002-2V8M4 8l2-4h12l2 4M10 12v4M14 12v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
                                 </div>
-                                <span className="text-xl font-bold">Tornese Foundation</span>
+                                <div>
+                                    <span className="text-xl font-black">TORNESE</span>
+                                    <p className="text-xs text-gray-400 -mt-1">Foundation</p>
+                                </div>
                             </div>
 
                             <p className="text-gray-400 mb-6 leading-relaxed">
@@ -86,7 +91,7 @@ const Footer = () => {
                             <div className="space-y-3">
                                 <a
                                     href="mailto:info@tornesefoundation.org"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors group"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors group"
                                 >
                                     <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     <span className="text-sm">info@tornesefoundation.org</span>
@@ -95,7 +100,7 @@ const Footer = () => {
                                     href="https://maps.google.com/?q=Via+Toledo+256+Napoli"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors group"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors group"
                                 >
                                     <MapPin className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     <span className="text-sm">Via Toledo, 256 - Napoli</span>
@@ -111,7 +116,7 @@ const Footer = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={social.name}
-                                        className="w-10 h-10 bg-slate-800 hover:bg-emerald-500 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/50"
+                                        className="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50"
                                     >
                                         <social.icon className="w-5 h-5" />
                                     </a>
@@ -121,14 +126,14 @@ const Footer = () => {
 
                         {/* Links Columns */}
                         <div>
-                            <h3 className="font-bold text-white mb-4">Progetto</h3>
+                            <h3 className="font-black text-white mb-4">Progetto</h3>
                             <ul className="space-y-3">
                                 {footerLinks.progetto.map((link, index) => (
                                     <li key={index}>
                                         {link.href ? (
                                             <a
                                                 href={link.href}
-                                                className="text-gray-400 hover:text-emerald-400 transition-colors text-sm flex items-center gap-1 group"
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm flex items-center gap-1 group"
                                             >
                                                 {link.label}
                                                 {link.label === 'Whitepaper' && (
@@ -138,7 +143,7 @@ const Footer = () => {
                                         ) : (
                                             <button
                                                 onClick={link.action}
-                                                className="text-gray-400 hover:text-emerald-400 transition-colors text-sm text-left"
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm text-left"
                                             >
                                                 {link.label}
                                             </button>
@@ -149,21 +154,21 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <h3 className="font-bold text-white mb-4">Azienda</h3>
+                            <h3 className="font-black text-white mb-4">Azienda</h3>
                             <ul className="space-y-3">
                                 {footerLinks.azienda.map((link, index) => (
                                     <li key={index}>
                                         {link.href ? (
                                             <a
                                                 href={link.href}
-                                                className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
                                             >
                                                 {link.label}
                                             </a>
                                         ) : (
                                             <button
                                                 onClick={link.action}
-                                                className="text-gray-400 hover:text-emerald-400 transition-colors text-sm text-left"
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm text-left"
                                             >
                                                 {link.label}
                                             </button>
@@ -174,13 +179,13 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <h3 className="font-bold text-white mb-4">Risorse</h3>
+                            <h3 className="font-black text-white mb-4">Risorse</h3>
                             <ul className="space-y-3">
                                 {footerLinks.risorse.map((link, index) => (
                                     <li key={index}>
                                         <a
                                             href={link.href}
-                                            className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                                            className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
                                         >
                                             {link.label}
                                         </a>
@@ -190,13 +195,13 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <h3 className="font-bold text-white mb-4">Legale</h3>
+                            <h3 className="font-black text-white mb-4">Legale</h3>
                             <ul className="space-y-3">
                                 {footerLinks.legale.map((link, index) => (
                                     <li key={index}>
                                         <a
                                             href={link.href}
-                                            className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                                            className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
                                         >
                                             {link.label}
                                         </a>
@@ -213,7 +218,7 @@ const Footer = () => {
                     <p className="text-center text-gray-500 text-sm mb-4">Partner e Sostenitori</p>
                     <div className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
                         {partners.map((partner, index) => (
-                            <span key={index} className="hover:text-emerald-400 transition-colors">
+                            <span key={index} className="hover:text-blue-400 transition-colors">
                                 {partner}
                             </span>
                         ))}
@@ -235,7 +240,7 @@ const Footer = () => {
                             <span className="text-gray-500 text-xs">P.IVA: IT12345678901</span>
                             <button
                                 onClick={scrollToTop}
-                                className="w-10 h-10 bg-slate-800 hover:bg-emerald-500 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/50 group"
+                                className="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 group"
                                 aria-label="Torna su"
                             >
                                 <ArrowUp className="w-5 h-5 group-hover:animate-bounce" />
@@ -247,7 +252,7 @@ const Footer = () => {
             </div>
 
             {/* Decorative Bottom Border */}
-            <div className="h-1 bg-linear-to-r from-emerald-500 via-teal-500 to-cyan-500" />
+            <div className="h-1 bg-linear-to-r from-blue-600 via-cyan-500 to-blue-600" />
         </footer>
     );
 };

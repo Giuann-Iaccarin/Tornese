@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Moon, Sun, Menu, X, Leaf, Recycle, Coins, TrendingUp } from 'lucide-react';
+import { Moon, Sun, Menu, X, Recycle, Coins, TrendingUp } from 'lucide-react';
 import ProjectSection from './sections/ProjectSection';
 import TeamSection from './sections/TeamSection';
 import MediaSection from './sections/MediaSection';
@@ -21,19 +21,22 @@ const Home = () => {
     };
 
     return (
-        <div className={`min-h-screen transition-colors duration-300 bg-white`}>
+        <div className="min-h-screen transition-colors duration-300 bg-white">
             {/* Navigation */}
-            <nav className="fixed w-full top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-slate-900/80 border-b border-gray-200 dark:border-slate-800">
+            <nav className="fixed w-full top-0 z-50 backdrop-blur-lg bg-white/90 border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
+                    <div className="flex justify-between items-center h-20">
                         {/* Logo */}
-                        <div className="flex items-center space-x-2">
-                            <div className="w-10 h-10 bg-linear-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-                                <Leaf className="w-6 h-6 text-white" />
+                        <div className="flex items-center space-x-3">
+                            <div className="w-12 h-12 bg-linear-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 8h16M4 8v8a2 2 0 002 2h12a2 2 0 002-2V8M4 8l2-4h12l2 4M10 12v4M14 12v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
                             </div>
-                            <span className="text-xl font-bold bg-linear-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
-                                Tornese Foundation
-                            </span>
+                            <div>
+                                <span className="text-2xl font-bold text-gray-900">TORNESE</span>
+                                <p className="text-xs text-gray-500 -mt-1">Foundation</p>
+                            </div>
                         </div>
 
                         {/* Desktop Navigation */}
@@ -42,27 +45,35 @@ const Home = () => {
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item)}
-                                    className={`capitalize text-sm font-medium transition-colors ${activeSection === item
-                                        ? 'text-emerald-500'
-                                        : 'text-gray-700 dark:text-gray-300 hover:text-emerald-500'
+                                    className={`capitalize text-sm font-semibold transition-all ${activeSection === item
+                                            ? 'text-blue-600'
+                                            : 'text-gray-600 hover:text-blue-600'
                                         }`}
                                 >
                                     {item === 'home' ? 'Home' : item === 'progetto' ? 'Progetto' : item === 'media' ? 'Parlano di Noi' : item}
                                 </button>
                             ))}
                         </div>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+                        >
+                            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden border-t border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+                    <div className="md:hidden border-t border-gray-200 bg-white">
                         <div className="px-4 py-4 space-y-3">
                             {['home', 'progetto', 'team', 'media', 'contatti'].map((item) => (
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item)}
-                                    className="block w-full text-left px-4 py-2 rounded-lg capitalize text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+                                    className="block w-full text-left px-4 py-2 rounded-lg capitalize text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium"
                                 >
                                     {item === 'home' ? 'Home' : item === 'progetto' ? 'Progetto' : item === 'media' ? 'Parlano di Noi' : item}
                                 </button>
@@ -73,68 +84,96 @@ const Home = () => {
             </nav>
 
             {/* Hero Section */}
-            <section id="home" className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-                <div className="max-w-7xl mx-auto">
+            <section id="home" className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl" />
+                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-600 rounded-full blur-3xl" />
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center space-y-8">
-                        <div className="inline-flex items-center space-x-2 bg-emerald-100 dark:bg-emerald-900/30 px-4 py-2 rounded-full">
-                            <Recycle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                            <span className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                        {/* Badge */}
+                        <div className="inline-flex items-center space-x-2 bg-blue-100 px-5 py-2.5 rounded-full border border-blue-200">
+                            <Recycle className="w-5 h-5 text-blue-600" />
+                            <span className="text-sm font-semibold text-blue-700">
                                 Blockchain × Sostenibilità × Economia Circolare
                             </span>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
+                        {/* Main Heading */}
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-tight">
                             Trasformiamo i rifiuti<br />
-                            <span className="bg-linear-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+                            <span className="bg-linear-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
                                 in valore reale
                             </span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        {/* Subtitle */}
+                        <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                             Il primo ecosistema blockchain per la sostenibilità urbana. Ricicla, ricevi criptovalute e contribuisci alla green economy.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                             <button
                                 onClick={() => scrollToSection('progetto')}
-                                className="px-8 py-4 bg-linear-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-emerald-500/50 transition-all transform hover:scale-105"
+                                className="px-10 py-5 bg-linear-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 hover:-translate-y-1"
                             >
                                 Scopri il Progetto
                             </button>
-                            <button className="px-8 py-4 bg-white dark:bg-slate-800 text-gray-900 dark:text-white rounded-xl font-semibold border-2 border-gray-200 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all">
+                            <button className="px-10 py-5 bg-white text-blue-600 rounded-2xl font-bold text-lg border-2 border-blue-600 hover:bg-blue-50 transition-all transform hover:scale-105">
                                 Scarica il Whitepaper
                             </button>
                         </div>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 max-w-4xl mx-auto">
+                        {/* Stats Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 max-w-5xl mx-auto">
                             {[
-                                { icon: Recycle, label: 'Materiali Riciclabili', value: '5+' },
-                                { icon: Coins, label: 'Token Tornese', value: 'TRN' },
-                                { icon: TrendingUp, label: 'Impatto Ambientale', value: 'ESG' }
+                                { icon: Recycle, label: 'Materiali Riciclabili', value: '5+', color: 'from-blue-500 to-cyan-500' },
+                                { icon: Coins, label: 'Token Tornese', value: 'TRN', color: 'from-blue-600 to-blue-700' },
+                                { icon: TrendingUp, label: 'Impatto Ambientale', value: 'ESG', color: 'from-cyan-500 to-blue-500' }
                             ].map((stat, i) => (
-                                <div key={i} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-slate-700">
-                                    <stat.icon className="w-8 h-8 text-emerald-500 mx-auto mb-3" />
-                                    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
-                                    <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                                <div
+                                    key={i}
+                                    className="group bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all transform hover:-translate-y-2 relative overflow-hidden"
+                                >
+                                    {/* Background Gradient */}
+                                    <div className={`absolute inset-0 bg-linear-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity`} />
+
+                                    {/* Icon */}
+                                    <div className={`w-16 h-16 bg-linear-to-br ${stat.color} rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform`}>
+                                        <stat.icon className="w-8 h-8 text-white" />
+                                    </div>
+
+                                    {/* Value */}
+                                    <div className="text-4xl font-black text-gray-900 mb-2">{stat.value}</div>
+
+                                    {/* Label */}
+                                    <div className="text-sm font-semibold text-gray-600">{stat.label}</div>
                                 </div>
                             ))}
+                        </div>
+
+                        {/* Trust Badge */}
+                        <div className="pt-12">
+                            <p className="text-sm text-gray-500 mb-4">Sostenuto da</p>
+                            <div className="flex flex-wrap justify-center gap-8 items-center opacity-50">
+                                {['🏛️ Enti Locali', '🌍 Partner ESG', '⚡ Blockchain Network', '♻️ Circular Economy'].map((partner, i) => (
+                                    <span key={i} className="text-gray-600 font-medium">{partner}</span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Placeholder sections */}
+            {/* Sections */}
             <ProjectSection />
-
             <TeamSection />
-
             <MediaSection />
-
-            <ContactSection />
-
             <Newsletter />
-
+            <ContactSection />
             <Footer />
         </div>
     );

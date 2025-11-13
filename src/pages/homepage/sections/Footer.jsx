@@ -21,18 +21,16 @@ const Footer = () => {
         progetto: [
             { label: 'Come Funziona', action: () => scrollToSection('progetto') },
             { label: 'Token Tornese', action: () => scrollToSection('progetto') },
-            { label: 'Roadmap', action: () => scrollToSection('progetto') },
+            { label: 'Roadmap', action: () => scrollToSection('roadmap') },
             { label: 'Whitepaper', href: '#' }
         ],
         azienda: [
             { label: 'Chi Siamo', action: () => scrollToSection('team') },
-            { label: 'Team', action: () => scrollToSection('team') },
-            { label: 'Carriere', href: 'mailto:careers@tornesefoundation.org' },
-            { label: 'Press Kit', action: () => scrollToSection('media') }
+            { label: 'Team', action: () => scrollToSection('team') }
         ],
         risorse: [
-            { label: 'Blog', href: '#' },
-            { label: 'FAQ', href: '#' },
+            { label: 'Blog', path: '/' },
+            { label: 'FAQ', path: '/' },
             { label: 'Documentazione', path: '/documentation' },
             { label: 'API Developer', path: '/api-developer' }
         ],

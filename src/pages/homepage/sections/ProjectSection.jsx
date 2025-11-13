@@ -136,7 +136,7 @@ const ProjectSection = () => {
                 </div>
 
                 {/* Roadmap */}
-                <div>
+                <div id="roadmap">
                     <h3 className="text-3xl font-black text-center text-gray-900 mb-4">
                         Roadmap 2026–2030
                     </h3>

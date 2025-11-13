@@ -24,7 +24,7 @@ const Documentation = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-white pt-24 pb-12">
+        <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-900 text-white pt-24 pb-12">
             <div className="max-w-4xl mx-auto px-4">
                 {/* Header */}
                 <button
@@ -48,7 +48,7 @@ const Documentation = () => {
                                 className="bg-slate-800 rounded-lg p-6 hover:bg-slate-700 transition-colors cursor-pointer border border-slate-700"
                             >
                                 <div className="flex items-start gap-4">
-                                    <Icon className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
+                                    <Icon className="w-6 h-6 text-blue-400 mt-1 shrink-0" />
                                     <div>
                                         <h3 className="text-xl font-bold text-white mb-2">{section.title}</h3>
                                         <p className="text-gray-400">{section.content}</p>

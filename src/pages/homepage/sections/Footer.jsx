@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Mail, MapPin, Linkedin, Instagram, Twitter, MessageCircle, ExternalLink, Heart, ArrowUp } from 'lucide-react';
 import TorneseLogo from '../TorneseLogo';
 
 const Footer = () => {
+    const navigate = useNavigate();
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -30,14 +33,14 @@ const Footer = () => {
         risorse: [
             { label: 'Blog', href: '#' },
             { label: 'FAQ', href: '#' },
-            { label: 'Documentazione', href: '#' },
-            { label: 'API Developer', href: '#' }
+            { label: 'Documentazione', path: '/documentation' },
+            { label: 'API Developer', path: '/api-developer' }
         ],
         legale: [
-            { label: 'Privacy Policy', href: '#' },
-            { label: 'Cookie Policy', href: '#' },
-            { label: 'Termini di Servizio', href: '#' },
-            { label: 'Disclaimer', href: '#' }
+            { label: 'Privacy Policy', path: '/privacy-policy' },
+            { label: 'Cookie Policy', path: '/cookie-policy' },
+            { label: 'Termini di Servizio', path: '/terms-of-service' },
+            { label: 'Disclaimer', path: '/disclaimer' }
         ]
     };
 
@@ -174,12 +177,21 @@ const Footer = () => {
                             <ul className="space-y-3">
                                 {footerLinks.risorse.map((link, index) => (
                                     <li key={index}>
-                                        <a
-                                            href={link.href}
-                                            className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
-                                        >
-                                            {link.label}
-                                        </a>
+                                        {link.path ? (
+                                            <button
+                                                onClick={() => navigate(link.path)}
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm text-left"
+                                            >
+                                                {link.label}
+                                            </button>
+                                        ) : (
+                                            <a
+                                                href={link.href}
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                                            >
+                                                {link.label}
+                                            </a>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -190,12 +202,21 @@ const Footer = () => {
                             <ul className="space-y-3">
                                 {footerLinks.legale.map((link, index) => (
                                     <li key={index}>
-                                        <a
-                                            href={link.href}
-                                            className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
-                                        >
-                                            {link.label}
-                                        </a>
+                                        {link.path ? (
+                                            <button
+                                                onClick={() => navigate(link.path)}
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm text-left"
+                                            >
+                                                {link.label}
+                                            </button>
+                                        ) : (
+                                            <a
+                                                href={link.href}
+                                                className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                                            >
+                                                {link.label}
+                                            </a>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

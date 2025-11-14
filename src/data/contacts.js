@@ -2,8 +2,8 @@ export const contactInfo = [
     {
         icon: 'Mail',
         title: 'Email',
-        value: 'info@tornesefoundation.org',
-        link: 'mailto:info@tornesefoundation.org',
+        value: 'business.tornese@protonmail.com',
+        link: 'mailto:business.tornese@protonmail.com',
         color: 'from-emerald-500 to-teal-500'
     },
     {

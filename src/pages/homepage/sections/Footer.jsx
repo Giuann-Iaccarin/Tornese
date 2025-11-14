@@ -82,11 +82,11 @@ const Footer = () => {
                             {/* Contact Info */}
                             <div className="space-y-3">
                                 <a
-                                    href="mailto:info@tornesefoundation.org"
+                                    href="mailto:business.tornese@protonmail.com"
                                     className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors group"
                                 >
                                     <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                    <span className="text-sm">info@tornesefoundation.org</span>
+                                    <span className="text-sm">business.tornese@protonmail.com</span>
                                 </a>
                                 <a
                                     href="https://maps.google.com/?q=Via+Toledo+256+Napoli"

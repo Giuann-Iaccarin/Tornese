@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Newspaper, Award, ExternalLink, ChevronLeft, ChevronRight, Trophy, Star } from 'lucide-react';
-import { mediaArticles, awards } from '../../../data/media';
+import { Newspaper, Award, ExternalLink, ChevronLeft, ChevronRight, Trophy, Star, Monitor, TrendingUp, Calendar } from 'lucide-react';
+import { mediaArticles, awards, upcomingEvents } from '../../../data/media';
+
 const icons = {
     Trophy,
     Award,
     Star,
+    Newspaper,
+    Monitor,
+    TrendingUp
 };
 
 const MediaSection = () => {
@@ -99,67 +103,70 @@ const MediaSection = () => {
                                 className="flex transition-transform duration-500 ease-in-out"
                                 style={{ transform: `translateX(-${activeSlide * 100}%)` }}
                             >
-                                {mediaArticles.map((article, index) => (
-                                    <div
-                                        key={index}
-                                        className="w-full shrink-0 px-2"
-                                    >
-                                        <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl reveal reveal-delay-3">
-                                            <div className="flex flex-col md:flex-row gap-8 items-center">
-                                                {/* Logo/Icon */}
-                                                <div className="shrink-0">
-                                                    <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-3xl flex items-center justify-center text-5xl md:text-6xl shadow-lg border border-gray-100">
-                                                        {article.logo}
-                                                    </div>
-                                                </div>
-
-                                                {/* Content */}
-                                                <div className="flex-1 text-center md:text-left">
-                                                    <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
-                                                        <span className="font-black text-blue-600 text-lg">
-                                                            {article.outlet}
-                                                        </span>
-                                                        <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">
-                                                            {article.date}
-                                                        </span>
+                                {mediaArticles.map((article, index) => {
+                                    const IconComponent = icons[article.logo];
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="w-full shrink-0 px-2"
+                                        >
+                                            <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl reveal reveal-delay-3">
+                                                <div className="flex flex-col md:flex-row gap-8 items-center">
+                                                    {/* Logo/Icon */}
+                                                    <div className="shrink-0">
+                                                        <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-3xl flex items-center justify-center text-5xl md:text-6xl shadow-lg border border-gray-100">
+                                                            <IconComponent className={`w-8 h-8 ${article.color}`} />
+                                                        </div>
                                                     </div>
 
-                                                    <h4 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-tight">
-                                                        {article.title}
-                                                    </h4>
+                                                    {/* Content */}
+                                                    <div className="flex-1 text-center md:text-left">
+                                                        <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+                                                            <span className="font-black text-blue-600 text-lg">
+                                                                {article.outlet}
+                                                            </span>
+                                                            <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">
+                                                                {article.date}
+                                                            </span>
+                                                        </div>
 
-                                                    <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                                                        {article.excerpt}
-                                                    </p>
+                                                        <h4 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-tight">
+                                                            {article.title}
+                                                        </h4>
 
-                                                    <a
-                                                        href={article.link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-500/50"
-                                                    >
-                                                        Leggi l'articolo
-                                                        <ExternalLink className="w-4 h-4" />
-                                                    </a>
+                                                        <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                                                            {article.excerpt}
+                                                        </p>
+
+                                                        <a
+                                                            href={article.link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-500/50"
+                                                        >
+                                                            Leggi l'articolo
+                                                            <ExternalLink className="w-4 h-4" />
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </div>
 
                         {/* Navigation Arrows */}
                         <button
                             onClick={prevSlide}
-                            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl border border-gray-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors z-10"
+                            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl border border-gray-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors z-10"
                         >
                             <ChevronLeft className="w-6 h-6" />
                         </button>
 
                         <button
                             onClick={nextSlide}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl border border-gray-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors z-10"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl border border-gray-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors z-10"
                         >
                             <ChevronRight className="w-6 h-6" />
                         </button>
@@ -180,6 +187,31 @@ const MediaSection = () => {
                     </div>
                 </div>
 
+                {/* Eventi Futuri Section */}
+                <div className="mb-20">
+                    <h3 className="text-2xl font-black text-gray-900 mb-8 text-center">
+                        Prossimi Eventi
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {upcomingEvents.map((event, index) => (
+                            <a
+                                key={index}
+                                href={event.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`group block bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all reveal reveal-delay-${(index % 3) + 1}`}
+                            >
+                                <div className="flex items-center gap-4 mb-4">
+                                    <Calendar className="w-6 h-6 text-blue-600" />
+                                    <span className="text-sm font-bold text-blue-600">{event.date}</span>
+                                </div>
+                                <h4 className="text-lg font-black text-gray-900 mb-1">{event.title}</h4>
+                                <p className="text-gray-600 text-sm">{event.location}</p>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
                 {/* Press Kit CTA */}
                 <div className="text-center bg-linear-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 shadow-2xl reveal reveal-delay-2">
                     <Newspaper className="w-16 h-16 text-white mx-auto mb-6" />
@@ -194,7 +226,7 @@ const MediaSection = () => {
                             Scarica Press Kit
                         </button>
                         <a
-                            href="mailto:press@tornesefoundation.org"
+                            href="mailto:business.tornese@protonmail.com"
                             className="px-8 py-4 bg-blue-700 text-white rounded-xl font-bold border-2 border-white hover:bg-blue-800 transition-all"
                         >
                             Contatta Ufficio Stampa

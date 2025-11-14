@@ -76,7 +76,7 @@ const Disclaimer = () => {
                             Per domande su questo disclaimer, contattaci a:
                         </p>
                         <div className="mt-4 space-y-2">
-                            <p>Email: <a href="mailto:info@tornesefoundation.org" className="text-blue-400 hover:text-blue-300">info@tornesefoundation.org</a></p>
+                            <p>Email: <a href="mailto:business.tornese@protonmail.com" className="text-blue-400 hover:text-blue-300">business.tornese@protonmail.com</a></p>
                         </div>
                     </section>
                 </div>

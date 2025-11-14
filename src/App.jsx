@@ -7,6 +7,7 @@ import TermsOfService from "./pages/footerpages/TermsOfService";
 import Disclaimer from "./pages/footerpages/Disclaimer";
 import APIDocumentation from "./pages/footerpages/APIDocumentation";
 import Documentation from "./pages/footerpages/Documentation";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/api-developer" element={<APIDocumentation />} />
         <Route path="/documentation" element={<Documentation />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

@@ -222,12 +222,12 @@ const ContactSection = () => {
                                             href={social.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200 ${social.color} hover:text-white transition-all group reveal reveal-delay-${(index % 3) + 1}`}
+                                            className={`flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200 group hover:bg-blue-600 transition-all reveal reveal-delay-${(index % 3) + 1}`}
                                         >
                                             {IconComponent && (
-                                                <IconComponent className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                                                <IconComponent className="w-6 h-6 text-blue-600 group-hover:text-white group-hover:scale-110 transition-transform" />
                                             )}
-                                            <span className="font-bold">{social.name}</span>
+                                            <span className="font-bold text-gray-900 group-hover:text-white">{social.name}</span>
                                         </a>
                                     );
                                 })}

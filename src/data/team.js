@@ -27,9 +27,9 @@ export const team = [
         skills: ['Blockchain', 'Smart Contracts', 'IoT']
     },
     {
-        name: 'Maria Rossi',
+        name: 'Sajad Beheshtyar Chermahini',
         role: 'Public Relations Manager',
-        bio: 'Specialista in comunicazione corporate e relazioni istituzionali. Costruisce e mantiene i rapporti con media, istituzioni e stakeholder per amplificare l\'impatto di Tornese.',
+        bio: 'Esperto in comunicazione e relazioni pubbliche con un focus sulla sostenibilità. Si occupa di promuovere la missione della Tornese Foundation e di gestire le relazioni con i media e gli stakeholder.',
         image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
         linkedin: '#',
         email: 'maria@tornesefoundation.org',

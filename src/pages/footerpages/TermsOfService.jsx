@@ -90,7 +90,7 @@ const TermsOfService = () => {
                             Per domande su questi Termini di Servizio, contattaci a:
                         </p>
                         <div className="mt-4 space-y-2">
-                            <p>Email: <a href="mailto:info@tornesefoundation.org" className="text-blue-400 hover:text-blue-300">info@tornesefoundation.org</a></p>
+                            <p>Email: <a href="mailto:business.tornese@protonmail.com" className="text-blue-400 hover:text-blue-300">business.tornese@protonmail.com</a></p>
                             <p>Indirizzo: Via Toledo, 256 - 80132 Napoli, Italia</p>
                         </div>
                     </section>

@@ -1,71 +1,63 @@
 export const mediaArticles = [
     {
-        outlet: 'Il Sole 24 Ore',
-        logo: '💼',
-        title: 'Tornese vince Start Cup Campania 2025',
-        excerpt: 'La startup napoletana che unisce blockchain e sostenibilità si aggiudica il primo premio nella categoria innovazione tecnologica.',
-        date: '15 Marzo 2025',
-        link: '#',
+        outlet: 'NTR24',
+        logo: 'Newspaper',
+        color: 'text-blue-600',
+        title: 'Start Cup Campania: Vince il progetto che crea intelligenza artificiale',
+        excerpt: 'Il progetto Janus dell\'Università Federico II si aggiudica la Start Cup Campania 2025 con una piattaforma innovativa per la creazione di intelligenza artificiale personalizzata.',
+        date: '27 Ottobre 2025',
+        link: 'https://www.ntr24.tv/2025/10/27/start-cup-campania-vince-il-progetto-che-crea-intelligenza-artificiale/',
         type: 'article'
     },
     {
-        outlet: 'TechCrunch Italy',
-        logo: '🚀',
-        title: 'Come Tornese sta rivoluzionando il riciclo urbano',
-        excerpt: 'Un\'intervista esclusiva ai founder della piattaforma che trasforma i rifiuti in criptovalute.',
-        date: '8 Febbraio 2025',
-        link: '#',
+        outlet: 'Innovation Village',
+        logo: 'TrendingUp',
+        color: 'text-green-600',
+        title: 'Innovazione Janus: Il progetto che crea IA Federico II vince Start Cup Campania 2025',
+        excerpt: 'Janus, la piattaforma rivoluzionaria per lo sviluppo di intelligenza artificiale, si è aggiudicata il primo posto alla Start Cup Campania 2025, distinguendosi per innovazione e potenziale di mercato.',
+        date: '27 Ottobre 2025',
+        link: 'https://innovationvillage.it/2025/10/27/innovazione-janus-il-progetto-che-crea-ia-federico-ii-vince-start-cup-campania-2025/',
         type: 'article'
     },
     {
-        outlet: 'La Repubblica',
-        logo: '📰',
-        title: 'Napoli pioniera della green economy blockchain',
-        excerpt: 'Le colonnine intelligenti di Tornese inaugurano una nuova era per la raccolta differenziata incentivata.',
-        date: '22 Gennaio 2025',
-        link: '#',
-        type: 'article'
-    },
-    {
-        outlet: 'Corriere del Mezzogiorno',
-        logo: '📱',
-        title: 'Riciclo 4.0: la startup che premia i cittadini virtuosi',
-        excerpt: 'Token digitali al posto dei rifiuti: l\'idea innovativa che convince investitori e istituzioni.',
-        date: '5 Gennaio 2025',
-        link: '#',
-        type: 'article'
-    },
-    {
-        outlet: 'Wired Italia',
-        logo: '⚡',
-        title: 'Blockchain for Good: il caso Tornese',
-        excerpt: 'Come la tecnologia distribuita può accelerare la transizione ecologica nelle città italiane.',
-        date: '18 Dicembre 2024',
-        link: '#',
+        outlet: 'FMAG',
+        logo: 'Monitor',
+        color: 'text-purple-600',
+        title: 'Innovazione Janus: Il progetto che crea IA Federico II vince Start Cup Campania 2025',
+        excerpt: 'Successo per il team Janus della Federico II che con la sua piattaforma di creazione IA si è imposto alla competizione regionale Start Cup Campania 2025, aprendo nuove frontiere nell\'intelligenza artificiale.',
+        date: '27 Ottobre 2025',
+        link: 'https://www.fmag.it/2025/10/27/innovazione-janus-il-progetto-che-crea-ia-federico-ii-vince-start-cup-campania-2025/',
         type: 'article'
     }
 ];
 
 export const awards = [
     {
-        title: 'Start Cup Campania 2025',
-        category: 'Primo Premio - Innovazione Tecnologica',
-        year: '2025',
-        icon: 'Trophy',
-        color: 'from-yellow-400 to-orange-500'
-    },
-    {
-        title: 'Green Innovation Award',
-        category: 'Miglior Progetto Sostenibilità',
-        year: '2025',
         icon: 'Award',
-        color: 'from-emerald-400 to-teal-500'
+        title: 'Menzione Sostenibilità 4.0',
+        category: 'Sostenibilità 4.0 2025',
+        year: '2025',
+        color: 'from-blue-500 to-purple-600'
+    }
+];
+
+export const upcomingEvents = [
+    {
+        date: '14-16 Nov 2025',
+        title: 'Smart City Expo',
+        location: 'Milano, Italia',
+        link: 'https://example.com/event1',
     },
     {
-        title: 'Blockchain Italia Awards',
-        category: 'Best Social Impact Project',
-        year: '2024',
-        icon: 'Star',
-        color: 'from-blue-400 to-cyan-500'
-    }
+        date: '5-7 Dic 2025',
+        title: 'Blockchain & Sustainability Forum',
+        location: 'Roma, Italia',
+        link: 'https://example.com/event2',
+    },
+    {
+        date: '20 Gen 2026',
+        title: 'GreenTech Conference',
+        location: 'Torino, Italia',
+        link: 'https://example.com/event3',
+    },
 ];

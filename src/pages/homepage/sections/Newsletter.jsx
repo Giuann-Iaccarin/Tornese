@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send, CheckCircle, AlertCircle, Bell } from 'lucide-react';
+import { Mail, Send, CheckCircle, AlertCircle, Bell, User } from 'lucide-react';
 
 const Newsletter = () => {
     const [email, setEmail] = useState('');
@@ -124,17 +124,17 @@ const Newsletter = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                     {[
                         {
-                            icon: '🚀',
+                            icon: <Send className="w-8 h-8 text-white" />,
                             title: 'Aggiornamenti Esclusivi',
                             description: 'Novità e milestone del progetto in anteprima'
                         },
                         {
-                            icon: '🎁',
+                            icon: <Bell className="w-8 h-8 text-white" />,
                             title: 'Early Access',
                             description: 'Accesso prioritario a eventi e lanci beta'
                         },
                         {
-                            icon: '📊',
+                            icon: <Mail className="w-8 h-8 text-white" />,
                             title: 'Report Mensili',
                             description: 'Dati e metriche sull\'impatto ambientale'
                         }
@@ -143,7 +143,9 @@ const Newsletter = () => {
                             key={index}
                             className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all reveal reveal-delay-${(index % 3) + 1}`}
                         >
-                            <div className="text-4xl mb-3">{benefit.icon}</div>
+                            <div className="flex justify-center mb-3">
+                                {benefit.icon}
+                            </div>
                             <h3 className="text-white font-black mb-2">{benefit.title}</h3>
                             <p className="text-blue-100 text-sm">{benefit.description}</p>
                         </div>
@@ -159,9 +161,13 @@ const Newsletter = () => {
                         {[...Array(5)].map((_, i) => (
                             <div
                                 key={i}
-                                className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/40 flex items-center justify-center text-white font-bold text-sm"
+                                className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/40 flex items-center justify-center text-white"
                             >
-                                {i === 4 ? '...' : '👤'}
+                                {i === 4 ? (
+                                    <span className="font-bold text-sm">…</span>
+                                ) : (
+                                    <User className="w-5 h-5" />
+                                )}
                             </div>
                         ))}
                     </div>

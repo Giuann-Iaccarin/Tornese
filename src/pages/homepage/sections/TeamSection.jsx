@@ -47,13 +47,13 @@ const TeamSection = () => {
                                         href={member.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
+                                        className="w-10 h-10 bg-white text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
                                     >
                                         <Linkedin className="w-5 h-5" />
                                     </a>
                                     <a
                                         href={`mailto:${member.email}`}
-                                        className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
+                                        className="w-10 h-10 bg-white text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
                                     >
                                         <Mail className="w-5 h-5" />
                                     </a>
@@ -92,21 +92,23 @@ const TeamSection = () => {
                     ))}
                 </div>
 
-                {/* CTA - Join Team */}
+                {/* CTA - Partners & Investors */}
                 <div className="mt-16 text-center reveal reveal-delay-2">
                     <div className="bg-linear-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 shadow-2xl">
                         <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
-                            Vuoi Far Parte del Team?
+                            Diventa Partner o Investitore
                         </h3>
                         <p className="text-blue-50 text-lg mb-6 max-w-2xl mx-auto">
-                            Siamo sempre alla ricerca di talenti appassionati di sostenibilità, blockchain e innovazione. Unisciti a noi nel costruire il futuro green.
+                            Siamo aperti a collaborazioni strategiche con aziende, fondazioni e investitori
+                            che condividono la nostra missione di accelerare la transizione verso un futuro
+                            più sostenibile tramite tecnologie innovative.
                         </p>
                         <a
-                            href="mailto:careers@tornesefoundation.org"
+                            href="mailto:business.tornese@protonmail.com"
                             className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-xl font-bold hover:shadow-2xl hover:shadow-white/30 transition-all transform hover:scale-105"
                         >
                             <Mail className="w-5 h-5 mr-2" />
-                            Invia la Tua Candidatura
+                            Contattaci per Collaborare
                         </a>
                     </div>
                 </div>

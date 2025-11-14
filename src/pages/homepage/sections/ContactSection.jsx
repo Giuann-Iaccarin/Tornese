@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send, Linkedin, Instagram, Twitter, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Linkedin, Instagram, Twitter, MessageCircle, CheckCircle, AlertCircle, Clock, XCircle } from 'lucide-react';
 import { contactInfo, socialLinks } from '../../../data/contacts';
 
 const icons = {
@@ -240,9 +240,18 @@ const ContactSection = () => {
                                 Orari Ufficio
                             </h3>
                             <div className="space-y-2 text-blue-50">
-                                <p>🕒 Lunedì - Venerdì: 9:00 - 18:00</p>
-                                <p>🕒 Sabato: 9:00 - 13:00</p>
-                                <p>🚫 Domenica: Chiuso</p>
+                                <p className="flex items-center gap-2">
+                                    <Clock className="w-5 h-5" />
+                                    Lunedì - Venerdì: 9:00 - 18:00
+                                </p>
+                                <p className="flex items-center gap-2">
+                                    <Clock className="w-5 h-5" />
+                                    Sabato: 9:00 - 13:00
+                                </p>
+                                <p className="flex items-center gap-2">
+                                    <XCircle className="w-5 h-5" />
+                                    Domenica: Chiuso
+                                </p>
                             </div>
                         </div>
                     </div>

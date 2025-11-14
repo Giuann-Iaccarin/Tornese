@@ -29,8 +29,8 @@ const Footer = () => {
             { label: 'Team', action: () => scrollToSection('team') }
         ],
         risorse: [
-            { label: 'Blog', path: '/' },
-            { label: 'FAQ', path: '/' },
+            { label: 'Blog', path: '/blog' },
+            { label: 'FAQ', path: '/faq' },
             { label: 'Documentazione', path: '/documentation' },
             { label: 'API Developer', path: '/api-developer' }
         ],

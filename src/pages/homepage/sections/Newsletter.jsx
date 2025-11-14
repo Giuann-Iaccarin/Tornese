@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Send, CheckCircle, AlertCircle, Bell, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Newsletter = () => {
     const [email, setEmail] = useState('');
@@ -112,9 +113,9 @@ const Newsletter = () => {
                             Iscrivendoti accetti di ricevere comunicazioni da Tornese.
                             <br className="hidden md:block" />
                             Leggi la nostra{' '}
-                            <a href="#" className="text-blue-600 hover:underline font-medium">
+                            <Link to="/privacy-policy" className="text-blue-600 hover:underline font-medium">
                                 Privacy Policy
-                            </a>
+                            </Link>
                             . Puoi disiscriverti in qualsiasi momento.
                         </p>
                     </form>

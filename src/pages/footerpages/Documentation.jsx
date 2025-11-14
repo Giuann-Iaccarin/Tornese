@@ -1,30 +1,12 @@
 import React from 'react';
-import { ArrowLeft, BookOpen, Code, Zap } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Documentation = () => {
     const navigate = useNavigate();
 
-    const docSections = [
-        {
-            title: 'Introduzione',
-            icon: BookOpen,
-            content: 'Scopri cos\'è Tornese e come funziona il nostro ecosistema blockchain per la sostenibilità urbana.'
-        },
-        {
-            title: 'Getting Started',
-            icon: Zap,
-            content: 'Guida passo-passo per iniziare a utilizzare la piattaforma Tornese e i token TORNESE.'
-        },
-        {
-            title: 'API Reference',
-            icon: Code,
-            content: 'Documentazione tecnica completa delle API disponibili per gli sviluppatori.'
-        }
-    ];
-
     return (
-        <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-900 text-white pt-24 pb-12">
+        <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-white pt-24 pb-12">
             <div className="max-w-4xl mx-auto px-4">
                 {/* Header */}
                 <button
@@ -36,30 +18,8 @@ const Documentation = () => {
                 </button>
 
                 <h1 className="text-4xl font-black mb-2">Documentazione</h1>
-                <p className="text-gray-400 mb-12">Tutto quello che devi sapere per iniziare con Tornese</p>
+                <p className="text-gray-400 mb-8">Tutto quello che devi sapere per iniziare con Tornese</p>
 
-                {/* Documentation Sections */}
-                <div className="grid md:grid-cols-1 gap-6 mb-12">
-                    {docSections.map((section, index) => {
-                        const Icon = section.icon;
-                        return (
-                            <div
-                                key={index}
-                                className="bg-slate-800 rounded-lg p-6 hover:bg-slate-700 transition-colors cursor-pointer border border-slate-700"
-                            >
-                                <div className="flex items-start gap-4">
-                                    <Icon className="w-6 h-6 text-blue-400 mt-1 shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-bold text-white mb-2">{section.title}</h3>
-                                        <p className="text-gray-400">{section.content}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* Main Content */}
                 <div className="space-y-8 text-gray-300 leading-relaxed">
                     <section>
                         <h2 className="text-2xl font-bold text-white mb-4">Introduzione a Tornese</h2>
@@ -70,18 +30,40 @@ const Documentation = () => {
 
                     <section>
                         <h2 className="text-2xl font-bold text-white mb-4">Come Iniziare</h2>
-                        <ol className="list-decimal list-inside space-y-2 ml-4">
-                            <li>Accedi alla piattaforma Tornese</li>
-                            <li>Completa la verifica dell'identità</li>
-                            <li>Ricevi il tuo wallet digitale</li>
-                            <li>Inizia a guadagnare token TORNESE</li>
+                        <p>Per iniziare con Tornese, segui questi passaggi:</p>
+                        <ol className="list-decimal list-inside space-y-2 mt-4 ml-4">
+                            <li>Accedi alla piattaforma Tornese dal sito ufficiale</li>
+                            <li>Completa la verifica dell'identità seguendo le istruzioni</li>
+                            <li>Ricevi il tuo wallet digitale personale</li>
+                            <li>Inizia a guadagnare token TORNESE riciclando</li>
                         </ol>
                     </section>
 
                     <section>
                         <h2 className="text-2xl font-bold text-white mb-4">Token TORNESE</h2>
                         <p>
-                            Il token TORNESE è la valuta nativa dell'ecosistema. Può essere guadagnato partecipando ad attività di riciclaggio, staking o governance della comunità.
+                            Il token TORNESE è la valuta nativa dell'ecosistema. Può essere guadagnato partecipando ad attività di riciclaggio, staking o governance della comunità. Ogni token rappresenta valore verificabile sulla blockchain e può essere scambiato o trasferito in qualsiasi momento.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-white mb-4">Punti di Raccolta</h2>
+                        <p>
+                            Puoi trovare i punti di raccolta autorizzati Tornese utilizzando la nostra mappa interattiva sulla piattaforma. Ogni punto di raccolta è dotato di scanner QR che registra immediatamente il tuo contributo alla blockchain.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-white mb-4">Portafoglio Digitale</h2>
+                        <p>
+                            Il tuo portafoglio digitale è il cuore della tua esperienza Tornese. Qui puoi: visualizzare i tuoi token TORNESE, monitorare le ricompense guadagnate, mettere in staking i tuoi token, e partecipare alle votazioni di governance della comunità.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-white mb-4">Sicurezza</h2>
+                        <p>
+                            La sicurezza è una priorità assoluta per Tornese. Tutti i tuoi dati personali sono crittografati end-to-end e i tuoi token sono protetti da chiavi crittografiche private. Non condividere mai la tua seed phrase o le tue chiavi private con nessuno.
                         </p>
                     </section>
 

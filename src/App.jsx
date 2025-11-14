@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import './App.css'
 import Home from "./pages/homepage/Home";
 import PrivacyPolicy from "./pages/footerpages/PrivacyPolicy";
@@ -7,11 +8,24 @@ import TermsOfService from "./pages/footerpages/TermsOfService";
 import Disclaimer from "./pages/footerpages/Disclaimer";
 import APIDocumentation from "./pages/footerpages/APIDocumentation";
 import Documentation from "./pages/footerpages/Documentation";
+import Blog from "./pages/footerpages/Blog";
+import FAQ from "./pages/footerpages/FAQ";
 import NotFound from "./pages/NotFound";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   return (
     <Router basename="/Tornese">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -20,6 +34,8 @@ function App() {
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/api-developer" element={<APIDocumentation />} />
         <Route path="/documentation" element={<Documentation />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

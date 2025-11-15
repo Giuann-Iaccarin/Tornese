@@ -23,9 +23,9 @@ const Disclaimer = () => {
 
                 {/* Alert Generale */}
                 <section className="mb-12">
-                    <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-6 rounded-r-xl">
+                    <div className="bg-linear-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-6 rounded-r-xl">
                         <div className="flex items-start gap-3">
-                            <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
+                            <AlertTriangle className="w-6 h-6 text-yellow-600 shrink-0 mt-1" />
                             <div>
                                 <h3 className="text-lg font-black text-gray-900 mb-2">
                                     Avvertenza Importante
@@ -292,7 +292,7 @@ const Disclaimer = () => {
 
                 {/* Contatti */}
                 <section>
-                    <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-3xl">
+                    <div className="bg-linear-to-r from-gray-900 to-gray-800 text-white p-8 rounded-3xl">
                         <h2 className="text-2xl font-black mb-4">
                             Domande?
                         </h2>

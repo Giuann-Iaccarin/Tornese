@@ -19,9 +19,9 @@ const Footer = () => {
 
     const footerLinks = {
         progetto: [
-            { label: 'Come Funziona', action: () => scrollToSection('progetto') },
-            { label: 'Token Tornese', action: () => scrollToSection('progetto') },
-            { label: 'Roadmap', action: () => scrollToSection('roadmap') },
+            { label: 'Come Funziona', path: '/come-funziona' },
+            { label: 'Token Tornese', path: '/token' },
+            { label: 'Roadmap', path: '/roadmap' },
             { label: 'Whitepaper', href: '#' }
         ],
         azienda: [
@@ -134,7 +134,7 @@ const Footer = () => {
                                             </a>
                                         ) : (
                                             <button
-                                                onClick={link.action}
+                                                onClick={() => navigate(link.path)}
                                                 className="text-gray-400 hover:text-blue-400 transition-colors text-sm text-left"
                                             >
                                                 {link.label}

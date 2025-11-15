@@ -11,6 +11,9 @@ import Documentation from "./pages/footerpages/Documentation";
 import Blog from "./pages/footerpages/Blog";
 import FAQ from "./pages/footerpages/FAQ";
 import NotFound from "./pages/NotFound";
+import HowItWorks from "./pages/footerpages/HowItWorks";
+import TokenTornese from "./pages/footerpages/TokenTornese";
+import RoadmapPage from "./pages/footerpages/RoadmapPage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,6 +40,9 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/come-funziona" element={<HowItWorks />} />
+        <Route path="/token" element={<TokenTornese />} />
+        <Route path="/roadmap" element={<RoadmapPage />} />
       </Routes>
     </Router>
   );

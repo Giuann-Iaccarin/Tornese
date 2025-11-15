@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound";
 import HowItWorks from "./pages/footerpages/HowItWorks";
 import TokenTornese from "./pages/footerpages/TokenTornese";
 import RoadmapPage from "./pages/footerpages/RoadmapPage";
+import Whitepaper from "./pages/footerpages/Whitepaper";
+import PressKit from "./pages/footerpages/PressKit";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -43,6 +45,8 @@ function App() {
         <Route path="/come-funziona" element={<HowItWorks />} />
         <Route path="/token" element={<TokenTornese />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
+        <Route path="/whitepaper" element={<Whitepaper />} />
+        <Route path="/presskit" element={<PressKit />} />
       </Routes>
     </Router>
   );

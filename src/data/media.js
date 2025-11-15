@@ -40,24 +40,3 @@ export const awards = [
         color: 'from-blue-500 to-purple-600'
     }
 ];
-
-export const upcomingEvents = [
-    {
-        date: '14-16 Nov 2025',
-        title: 'Smart City Expo',
-        location: 'Milano, Italia',
-        link: 'https://example.com/event1',
-    },
-    {
-        date: '5-7 Dic 2025',
-        title: 'Blockchain & Sustainability Forum',
-        location: 'Roma, Italia',
-        link: 'https://example.com/event2',
-    },
-    {
-        date: '20 Gen 2026',
-        title: 'GreenTech Conference',
-        location: 'Torino, Italia',
-        link: 'https://example.com/event3',
-    },
-];

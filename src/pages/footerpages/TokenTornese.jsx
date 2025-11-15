@@ -256,8 +256,8 @@ const TokenTornese = () => {
                                     <li>• Consulta un consulente finanziario prima di decisioni importanti</li>
                                 </ul>
                                 <p className="mt-4 text-sm text-gray-600">
-                                    Leggi il nostro <a href="/disclaimer" className="text-blue-600 hover:underline font-semibold">Disclaimer completo</a> e
-                                    i <a href="/terms" className="text-blue-600 hover:underline font-semibold">Termini di Servizio</a>.
+                                    Leggi il nostro <a href="/Tornese/disclaimer" className="text-blue-600 hover:underline font-semibold">Disclaimer completo</a> e
+                                    i <a href="/Tornese/terms-of-service" className="text-blue-600 hover:underline font-semibold">Termini di Servizio</a>.
                                 </p>
                             </div>
                         </div>

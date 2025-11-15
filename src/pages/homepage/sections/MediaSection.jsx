@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Newspaper, Award, ExternalLink, ChevronLeft, ChevronRight, Trophy, Star, Monitor, TrendingUp, Calendar } from 'lucide-react';
-import { mediaArticles, awards, upcomingEvents } from '../../../data/media';
+import { mediaArticles, awards } from '../../../data/media';
 
 const icons = {
     Trophy,
@@ -184,31 +184,6 @@ const MediaSection = () => {
                                 />
                             ))}
                         </div>
-                    </div>
-                </div>
-
-                {/* Eventi Futuri Section */}
-                <div className="mb-20">
-                    <h3 className="text-2xl font-black text-gray-900 mb-8 text-center">
-                        Prossimi Eventi
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {upcomingEvents.map((event, index) => (
-                            <a
-                                key={index}
-                                href={event.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`group block bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all reveal reveal-delay-${(index % 3) + 1}`}
-                            >
-                                <div className="flex items-center gap-4 mb-4">
-                                    <Calendar className="w-6 h-6 text-blue-600" />
-                                    <span className="text-sm font-bold text-blue-600">{event.date}</span>
-                                </div>
-                                <h4 className="text-lg font-black text-gray-900 mb-1">{event.title}</h4>
-                                <p className="text-gray-600 text-sm">{event.location}</p>
-                            </a>
-                        ))}
                     </div>
                 </div>
 

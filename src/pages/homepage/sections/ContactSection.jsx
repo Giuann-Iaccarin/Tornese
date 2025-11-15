@@ -198,7 +198,9 @@ const ContactSection = () => {
                                             </div>
                                             <div>
                                                 <h4 className="font-bold text-gray-900 mb-1">{info.title}</h4>
-                                                <p className="text-gray-600 whitespace-pre-line">{info.value}</p>
+                                                <p className="text-gray-600 whitespace-pre-line break-all">
+                                                    {info.value}
+                                                </p>
                                             </div>
                                         </a>
                                     );

@@ -40,7 +40,7 @@ const ProjectSection = () => {
                             const IconComponent = icons[item.icon]; // <-- prende il componente corretto dinamicamente
 
                             return (
-                                <div key={index} className={`relative group reveal reveal-delay-${index+1}`}>
+                                <div key={index} className={`relative group reveal reveal-delay-${index + 1}`}>
                                     {/* Connecting Line */}
                                     {index < howItWorks.length - 1 && (
                                         <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-linear-to-r from-blue-500 to-cyan-500 opacity-30" />
@@ -110,20 +110,24 @@ const ProjectSection = () => {
                             </ul>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {features.map((feature, i) => {
                                 const IconComponent = icons[feature.icon]; // Prende il componente corretto
 
                                 return (
                                     <div
                                         key={i}
-                                        className={`bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all reveal reveal-delay-${(i % 4) + 1}`}
+                                        className={`text-center md:text-left bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all reveal reveal-delay-${(i % 4) + 1}`}
                                     >
                                         {/* Icona dinamica */}
                                         {IconComponent ? (
-                                            <IconComponent className="w-10 h-10 text-blue-600 mb-4" />
+                                            <div className="flex justify-center md:justify-start mb-4">
+                                                <IconComponent className="w-10 h-10 text-blue-600" />
+                                            </div>
                                         ) : (
-                                            <div className="w-10 h-10 mb-4 bg-blue-100 rounded-lg" /> // fallback
+                                            <div className="flex justify-center md:justify-start mb-4">
+                                                <div className="w-10 h-10 bg-blue-100 rounded-lg" />
+                                            </div>
                                         )}
 
                                         <h5 className="font-bold text-gray-900 mb-2">{feature.title}</h5>

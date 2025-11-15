@@ -32,7 +32,7 @@ export const team = [
         bio: 'Esperto in comunicazione e relazioni pubbliche con un focus sulla sostenibilità. Si occupa di promuovere la missione della Tornese Foundation e di gestire le relazioni con i media e gli stakeholder.',
         image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
         linkedin: 'https://www.linkedin.com/in/angelosarvonio?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-        email: '',
-        skills: ['Media Relations', 'Corporate Communication', 'Stakeholder Management']
+        email: 's.beheshty75@gmail.com',
+        skills: ['Media Relations', 'Corporate Communication']
     }
 ];

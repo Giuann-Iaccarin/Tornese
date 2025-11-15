@@ -31,50 +31,49 @@ const TeamSection = () => {
                             key={index}
                             className={`group relative bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2 reveal reveal-delay-${(index % 3) + 1}`}
                         >
-                            {/* Image Container */}
-                            <div className="relative h-64 overflow-hidden bg-linear-to-br from-blue-500 to-cyan-500 reveal-hover-scale">
-                                <img
-                                    src={member.image}
-                                    alt={member.name}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                                />
-                                {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                                {/* Social Links - Appear on Hover */}
-                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-                                    <a
-                                        href={member.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-10 h-10 bg-white text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
-                                    >
-                                        <Linkedin className="w-5 h-5" />
-                                    </a>
-                                    <a
-                                        href={`mailto:${member.email}`}
-                                        className="w-10 h-10 bg-white text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
-                                    >
-                                        <Mail className="w-5 h-5" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <div className="p-6">
+                            {/* Content (No Image Version) */}
+                            <div className="p-6 text-center flex flex-col h-full justify-between">
+                                {/* Name */}
                                 <h3 className="text-xl font-black text-gray-900 mb-1">
                                     {member.name}
                                 </h3>
+
+                                {/* Role */}
                                 <p className="text-blue-600 font-bold text-sm mb-4">
                                     {member.role}
                                 </p>
 
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                {/* Bio */}
+                                <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                     {member.bio}
                                 </p>
 
+                                {/* Social Links */}
+                                <div className="flex justify-center space-x-3 mb-6">
+                                    {member.linkedin && (
+                                        <a
+                                            href={member.linkedin}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
+                                        >
+                                            <Linkedin className="w-5 h-5" />
+                                        </a>
+                                    )}
+
+                                    {member.email && (
+                                        <a
+                                            href={`mailto:${member.email}`}
+                                            className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors shadow-lg"
+                                        >
+                                            <Mail className="w-5 h-5" />
+                                        </a>
+                                    )}
+                                </div>
+
                                 {/* Skills Tags */}
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap justify-center gap-2">
                                     {member.skills.map((skill, i) => (
                                         <span
                                             key={i}

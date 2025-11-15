@@ -26,7 +26,7 @@ export const socialLinks = [
     {
         name: 'LinkedIn',
         icon: 'Linkedin',
-        url: 'https://linkedin.com/company/tornese-foundation',
+        url: 'https://www.linkedin.com/company/torneseofficial/about/',
         color: 'hover:bg-blue-600'
     },
     {
